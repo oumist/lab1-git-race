@@ -8,8 +8,8 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 
-sourceCompatibility = 13.0
-targetCompatibility = 13.0
+sourceCompatibility = 13
+targetCompatibility = 13
 
 repositories {
     mavenCentral()
