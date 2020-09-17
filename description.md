@@ -13,7 +13,7 @@
 
 ## How to build the code
 
-This App's code is built using Gradle, for its installation please refer to the Gradle installation guide. To then build the code follow the following steps:
+This App's code is built using [Gradle](http://gradle.org), for its installation please refer to the [Gradle installation guide](https://docs.gradle.org/current/userguide/installation.html). To then build the code follow the following steps:
 
 ```bash
 cd lab1-git-race
