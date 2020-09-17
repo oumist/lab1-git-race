@@ -33,14 +33,14 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(UltraCalculatorController.class)
+@WebMvcTest(CalculatorController.class)
 public class CalculatorControllerUnitTest {
 
     @Value("${app.error}")
     private String error;
 
     @Autowired
-    private UltraCalculatorController controller;
+    private CalculatorController controller;
 
     /**
      * Performs test with integer positive values

@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Map;
 
 @Controller
-public class UltraCalculatorController {
+public class CalculatorController {
 
     /**
      * This method is called when requested by GET petition to
