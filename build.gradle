@@ -23,6 +23,13 @@ task stage {
     dependsOn build
 }
 
+tasks.stage.doLast() {
+    delete fileTree(dir: "build/distributions")
+    delete fileTree(dir: "build/assetCompile")
+    delete fileTree(dir: "build/distributions")
+    delete fileTree(dir: "build/libs", exclude: "*.war")
+}
+
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'javax.servlet:jstl'
