@@ -16,6 +16,7 @@ public class HelloController {
     public String welcome(Map<String, Object> model) {
         model.put("time", new Date());
         model.put("message", message);
+        model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         return "wellcome";
     }
 }
