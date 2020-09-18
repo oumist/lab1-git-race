@@ -1,1 +1,1 @@
-web: java -jar gradle/wrapper/*.jar build/libs/*.war
+web: java build/libs/*.war
