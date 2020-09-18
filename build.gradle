@@ -46,7 +46,5 @@ dependencies {
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
-    //Nueva
-    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 
