@@ -57,4 +57,3 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-data-rest', version: '2.9.2'   
 
 }
-
