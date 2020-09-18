@@ -24,7 +24,7 @@ public class StaticContentUnitTest {
     @Autowired
     private WebApplicationContext wac;
 
-    @Value("${app.message:Hello World}")
+    @Value("${app.message:Press F5 to roll the dice}")
     private String message;
 
     private MockMvc mockMvc;
