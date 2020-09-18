@@ -19,6 +19,10 @@ repositories {
     mavenCentral()
 }
 
+task stage {
+    dependsOn build
+}
+
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'javax.servlet:jstl'
