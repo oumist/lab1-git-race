@@ -21,7 +21,7 @@ public class SpringSwaggerConf {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("es.unizar.webeng.hello.HelloController"))              
+          .apis(RequestHandlerSelectors.basePackage("es.unizar.webeng.hello"))              
           .paths(PathSelectors.ant("/*"))                          
           .build();                                           
     }
