@@ -11,11 +11,12 @@ import java.util.Map;
 public class HelloController {
     @Value("${app.message:Hello World}")
     private String message;
-
+    private String link = "Abre este enlace";
     @GetMapping("/")
     public String welcome(Map<String, Object> model) {
         model.put("time", new Date());
         model.put("message", message);
+        model.put("link", link);
         return "wellcome";
     }
 }
