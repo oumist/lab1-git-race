@@ -47,7 +47,11 @@ dependencies {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
     //Added to use Swagger
+    compile group: 'org.springframework.plugin', name: 'spring-plugin-core', version: '1.2.0.RELEASE' 
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'   
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile group: 'io.springfox', name: 'springfox-data-rest', version: '2.9.2'   
+
 }
 
