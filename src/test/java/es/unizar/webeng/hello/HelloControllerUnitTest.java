@@ -31,4 +31,15 @@ public class HelloControllerUnitTest {
         assertThat(map.containsKey("message"), is(true));
         assertThat(map.get("message"), is(message));
     }
+
+    @Test
+    public void testName() throws Exception {
+        String name = "user";
+        HashMap<String, Object> map = new HashMap<>();
+        String view = controller.welcomeName(map, name);
+        assertThat(view, is("wellcome"));
+
+        assertThat(map.containsKey("message"), is(true));
+        assertThat(map.get("message"), is("Hola " + name));
+    }
 }

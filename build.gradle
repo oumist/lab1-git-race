@@ -1,6 +1,6 @@
 plugins {
-    id "io.spring.dependency-management" version "1.0.6.RELEASE"
-    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
 }
 
 apply plugin: 'war'
@@ -30,5 +30,8 @@ dependencies {
     providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 }
 
