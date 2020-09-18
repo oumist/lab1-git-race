@@ -19,6 +19,7 @@ repositories {
     mavenCentral()
 }
 
+//Deploy
 
 task stage() {
     dependsOn clean, war
@@ -33,6 +34,8 @@ task copyToLib(type: Copy) {
 }
 
 stage.dependsOn(copyToLib)
+
+//
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
