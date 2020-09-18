@@ -46,5 +46,9 @@ dependencies {
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
+    //Added to use Swagger
+    compile 'io.springfox:springfox-swagger2'
+    compile 'io.springfox:springfox-swagger-ui'
+
 }
 
