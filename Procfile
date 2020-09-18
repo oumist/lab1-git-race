@@ -1,1 +1,1 @@
-web: java build/libs/*.war
+web: java -jar build/libs/*.war
