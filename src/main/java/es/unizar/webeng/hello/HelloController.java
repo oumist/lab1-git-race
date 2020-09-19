@@ -9,6 +9,12 @@ import java.util.Map;
 import java.text.SimpleDateFormat;
 
 
+/**
+ * The HelloControler program implements an application that
+ * simply displays current time and a static welcome message
+ * when requested.
+ *
+ */
 @Controller
 public class HelloController {
     @Value("${app.message:Hello World}")
@@ -18,7 +24,14 @@ public class HelloController {
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private String currentDay = sdf.format(new Date()).substring(0,2);
 
-
+    /**
+     * This method is called when requested by GET petition to
+     * main webpage (/). Puts current time and a message on a
+     * Map so it can be read by view (JSP)
+     *
+     * @param model This is the map where we put the data
+     * @return JSP name view.
+     */
     @GetMapping("/")
     public String welcome(Map<String, Object> model) {
 
