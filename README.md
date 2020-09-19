@@ -14,4 +14,4 @@ Some ideas for obtaining a :gift: if you are the first that:
 User name | NIA | Travis-CI|Score
 ----------|-----|----------|-----
 [UNIZAR-30246-WebEngineering](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race) |30246 | [![Build Status](https://travis-ci.com/UNIZAR-30246-WebEngineering/lab1-git-race.svg)](https://travis-ci.com/UNIZAR-30246-WebEngineering/lab1-git-race)
-your name | your nia | your Travis-ci status
+[Sergio-Martinez-97](https://github.com/Sergio-Martinez-97/lab1-git-race) | 719974 | [![Build Status](https://travis-ci.com/UNIZAR-30246-WebEngineering/lab1-git-race.svg)](https://travis-ci.com/github/Sergio-Martinez-97/lab1-git-race)
