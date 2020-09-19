@@ -1,5 +1,10 @@
 package es.unizar.webeng.hello;
 
+/**
+ * Performs unit test to the Wellcome JSP template
+ *
+ */
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +28,11 @@ public class HelloControllerUnitTest {
     private HelloController controller;
 
 
+    /**
+     * Performs static unit content test to the
+     * main JSP template wellcome (message)
+     *
+     */
     @Test
     public void testMessage() throws Exception {
         HashMap<String, Object> map = new HashMap<>();
