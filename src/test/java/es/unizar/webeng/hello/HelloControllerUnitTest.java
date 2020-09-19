@@ -22,7 +22,11 @@ public class HelloControllerUnitTest {
     @Autowired
     private HelloController controller;
 
-
+    /**
+     * Test for the message returned.
+     * <p>
+     * This function tests whether the welcome function sets the message info and the message is correct
+     */
     @Test
     public void testMessage() throws Exception {
         HashMap<String, Object> map = new HashMap<>();
@@ -32,6 +36,12 @@ public class HelloControllerUnitTest {
         assertThat(map.get("message"), is(message));
     }
 
+    /**
+     * Test for the message returned when calling the welcomeName function.
+     * <p>
+     * This function tests whether the welcomeName function sets the message info 
+     *  and the message corresponds with the name sent to the function
+     */
     @Test
     public void testName() throws Exception {
         String name = "user";

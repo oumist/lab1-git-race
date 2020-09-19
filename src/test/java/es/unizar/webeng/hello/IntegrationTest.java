@@ -23,6 +23,12 @@ public class IntegrationTest {
     @LocalServerPort
     private int port = 0;
 
+    /**
+     * Test for the "/" path GET request.
+     * <p>
+     * This function checks that the request gives an OK response and
+     *  if the response is correct(Contains the "<title>Hello" that is part of the template)
+     */
     @Test
     public void testHome() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
@@ -32,6 +38,12 @@ public class IntegrationTest {
                 .getBody().contains("<title>Hello"));
     }
 
+    /**
+     * Test for the css conent.
+     * <p>
+     * This function checks that the response status is Ok and
+     *  there is a body whose media type equals "text/css"
+     */
     @Test
     public void testCss() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
