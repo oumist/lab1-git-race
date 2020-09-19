@@ -5,9 +5,9 @@ This repository contains a web application which prints:
 Simple Spring web application which can perform several actions:
 * Get current date, user & welcome message
   * The actual date (*Thu Sep 17 16:26:04 CEST 2020*, for example)
-  * The user (@<user>)
-  * A welcome message, "Hola alumno", that can be customized to "Hola <user>"
-  * The user is "alumno" by default and changes using the /<name> path, being <name> any username 
+  * The user (@\<user>)
+  * A welcome message, "Hola alumno", that can be customized to "Hola \<user>"
+  * The user is "alumno" by default and changes using the /\<name> path, being \<name> any username 
 * Add two integer numbers
 * Show current browser and version
 
