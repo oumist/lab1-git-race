@@ -15,6 +15,7 @@ Simple Spring web application which can perform several actions:
 1. [How to test the code](#how-to-test-the-code)
 1. [How to run the code](#how-to-run-the-code)
 1. [How to deploy the code in a server](#how-to-deploy-the-code-in-a-server)
+1. [How to deploy with Docker](#how-to-deploy-with-docker)
 1. [Setting up Redis](#setting-up-redis)
 1. [Using Redis in your application](#using-redis-in-your-application)
 1. [Which are the technologies used in the code](#which-are-the-technologies-used-in-the-code)
@@ -48,6 +49,15 @@ Gradle can perform all tests automatically.
 ```
 ./gradlew BootRun
 ```
+
+## How to deploy with Docker  
+```
+docker build -t ingweb/git-race .
+docker run -i -p 8080:8080 ingweb/git-race 
+```
+> It may require root permission
+
+
 
 # Which are the technologies used in the code
 
