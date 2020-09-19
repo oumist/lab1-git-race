@@ -30,7 +30,7 @@ This App's code is built using [Gradle](http://gradle.org), for its installation
 ```bash
 git clone https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race
 cd lab1-git-race
-gradle build
+./gradlew build
 ```
 
 After the build is completed, the generated WAR file will be located inside the _libs_ folder under the _build_ directory.
@@ -45,8 +45,11 @@ Gradle can perform all tests automatically.
 
 ## How to run the code
 
-```
-./gradlew BootRun
+This program runs an application server (embedded into Spring library).
+In order to build and execute the project you have to do:
+
+```bash
+./gradlew bootRun
 ```
 
 # Which are the technologies used in the code
