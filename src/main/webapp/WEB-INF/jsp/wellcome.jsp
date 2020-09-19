@@ -7,7 +7,10 @@
 <link rel="stylesheet" type="text/css"
       href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <body>
-<kbd>${time}<span class="glyphicon glyphicon-console"></span>${message}</kbd>
+<kbd>${time}  <span class="glyphicon glyphicon-console"></span>  ${message}</kbd><br/>
+<kbd>${joke_const}</kbd><br/>
+<kbd>+</kbd><kbd>${joke_plus}</kbd><br/>
+<kbd>-</kbd><kbd>${joke_mins}</kbd><br/>
 <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
 </body>
 
