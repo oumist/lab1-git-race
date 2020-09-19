@@ -31,7 +31,7 @@ This App's code is built using [Gradle](http://gradle.org), for its installation
 ```bash
 git clone https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race
 cd lab1-git-race
-gradle build
+./gradlew build
 ```
 
 After the build is completed, the generated WAR file will be located inside the _libs_ folder under the _build_ directory.
@@ -46,8 +46,11 @@ Gradle can perform all tests automatically.
 
 ## How to run the code
 
-```
-./gradlew BootRun
+This program runs an application server (embedded into Spring library).
+In order to build and execute the project you have to do:
+
+```bash
+./gradlew bootRun
 ```
 
 ## How to deploy with Docker  
@@ -57,9 +60,7 @@ docker run -i -p 8080:8080 ingweb/git-race
 ```
 > It may require root permission
 
-
-
-# Which are the technologies used in the code
+## Which are the technologies used in the code
 
 * Spring ~ Controller side
 * HTML/CSS ~ View side
@@ -67,3 +68,19 @@ docker run -i -p 8080:8080 ingweb/git-race
 * Java ~ Controller engine
 
 This project's code is documented following Javadoc standards.
+
+## Which is the purpose of a specific java annotation
+
+### @SpringBootApplication
+
+This annotation is used on top of most Spring Boot main class programs, as it enables the developer an to configure and scan for components automatically.
+
+This annotation has teh same function as @ComponentScan, @EnableAutoConfiguration, and @Configuration with their default attributes, allowing the developer to reduce this three annotations into only one.
+
+Here's a brief description of each annotation's function:
+
+* @Configuration: allows us define the class which possesses it as a configuration class. It also allows us to inject additional dependencies(beans).
+* @EnableAutoConfiguration: it's Spring Boot's automatic configuration, which changes in function of the beans aggregated.
+* @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
+
+If the developer wants to replace one of these three annotations for a different one, it would be necessary to substitute the unwanted annotation.
