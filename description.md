@@ -76,5 +76,3 @@ Here's a brief description of each annotation's function:
 * @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
 
 If the developer wants to replace one of these three annotations for a different one, it would be necessary to substitute the unwanted annotation.
-
-

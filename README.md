@@ -19,4 +19,5 @@ User name | NIA | Travis-CI|Score
 [Raúl Javierre Cabrero](https://github.com/rauljavierre/lab1-git-race) | 758906 | [![Build Status](https://travis-ci.com/rauljavierre/lab1-git-race.svg)](https://travis-ci.com/rauljavierre/lab1-git-race) | :gift:
 [Pedro Tamargo](https://github.com/piter1902/lab1-git-race) | 758267 | [![Build Status](https://travis-ci.com/piter1902/lab1-git-race.svg?branch=master)](https://travis-ci.com/piter1902/lab1-git-race)
 [Rogelio Antonio Lacruz Mirallas](https://github.com/RogorStuff/lab1-git-race) | 756123 | [![Build Status](https://travis-ci.org/RogorStuff/lab1-git-race.svg)](https://travis-ci.org/RogorStuff/lab1-git-race)
+[Francisco Morés](https://github.com/Fran-sw/lab1-git-race) | 757153 | [![Build Status](https://travis-ci.com/Fran-sw/lab1-git-race.svg?branch=master)](https://travis-ci.com/Fran-sw/lab1-git-race)
 your name | your nia | your Travis-ci status

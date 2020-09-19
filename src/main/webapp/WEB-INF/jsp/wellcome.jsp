@@ -9,6 +9,7 @@
 <body>
 <kbd>${time}<span class="glyphicon glyphicon-console"></span>${message}<br>
 Today's lucky colour is ${luckyColor}</kbd>
+<kbd>${extra_message}</kbd>
 <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
 </body>
 
