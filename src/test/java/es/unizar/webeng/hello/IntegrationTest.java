@@ -1,4 +1,10 @@
+
 package es.unizar.webeng.hello;
+
+/**
+ * Performs integration test for webpage
+ *
+ */
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +30,7 @@ public class IntegrationTest {
     private int port = 0;
 
     /**
-     * Test for the "/" path GET request.
+     * Performs integration test for main webpage
      * <p>
      * This function checks that the request gives an OK response and
      *  if the response is correct(Contains the "<title>Hello" that is part of the template)
@@ -39,7 +45,7 @@ public class IntegrationTest {
     }
 
     /**
-     * Test for the css conent.
+     * Performs integration test for CSS
      * <p>
      * This function checks that the response status is Ok and
      *  there is a body whose media type equals "text/css"

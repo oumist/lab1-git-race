@@ -12,8 +12,8 @@ jar {
     baseName = 'hello'
     version = '1.0'
 }
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 11    // 1.8 for Java 8
+targetCompatibility = 11    // 1.8 for Java 8
 
 repositories {
     mavenCentral()

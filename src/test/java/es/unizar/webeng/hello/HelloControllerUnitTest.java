@@ -1,5 +1,10 @@
 package es.unizar.webeng.hello;
 
+/**
+ * Performs unit test to the Wellcome JSP template
+ *
+ */
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +28,8 @@ public class HelloControllerUnitTest {
     private HelloController controller;
 
     /**
-     * Test for the message returned.
+     * Performs static unit content test to the
+     * main JSP template wellcome (message)
      * <p>
      * This function tests whether the welcome function sets the message info and the message is correct
      */

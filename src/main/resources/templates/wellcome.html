@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <!--/* Thymeleaf template that shows:
       <time> @<name> <Console-icon> <message>
+      Today's lucky color is <luckyColor>
 
-      <message> consists of "Hola <name>"
+      - <message> consists of "Hola <name>", default value is "message"
+      - <name> default is "alumno"
+      - <luckyColor> default is "red"
       */-->
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -11,8 +14,9 @@
       <link rel="stylesheet" type="text/css"
             th:href="@{webjars/bootstrap/3.3.5/css/bootstrap.min.css}"/>
       <body>
-            <kbd> <th:block th:text="${time}">time</th:block> @<th:block th:text="${name}"></th:block>
-                  <span class="glyphicon glyphicon-console"></span> <th:block th:text="${message}">message</th:block>
+            <kbd> <th:block th:text="${time}">time</th:block> @<th:block th:text="${name} ?: 'alumno'"></th:block>
+                  <span class="glyphicon glyphicon-console"></span> <th:block th:text="${message} ?: 'message'"></th:block>
+                  <br>Today's lucky colour is <th:block th:text="${luckyColor} ?: 'red'"></th:block>
             </kbd>
             <script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
       </body>
