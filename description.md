@@ -52,6 +52,27 @@ In order to build and execute the project you have to do:
 ./gradlew bootRun
 ```
 
+## How to deploy the code in a server
+
+Web's deployment using Heroku and GitHub:
+
+	-Install Git Bash and Heroku CLI locally
+	-Log in Git and Heroku
+	-Create a new app in Heroku's web with the desired name (deployp1iw)
+	-Add dependencies in build.gradle
+	-Create a Procfile file that executes app's .war
+	-While on app's root directory (locally), create a link between GitHub and Heroku: heroku git:remote -a deployp1iw
+	-Push to Heroku: git push heroku master
+
+Once the previous steps have been followed, the web is deployed, the following link shows the web (it may take time to load the web due to Heroku's restrictions on free apps): https://deployp1iw.herokuapp.com/
+These guides have been followed to deploy the web: https://devcenter.heroku.com/articles/git (deploy using Git) and https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku (deploy using Gradle).
+
+
+This web has been documented using Swagger, which allows you to describe the generated API (Controllers) and its functions. The next guide has been followed to document the web: https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+A new class has been added to the application, SpringSwaggerConf.java, which defines Swagger's configuration. The class HelloController.java has been modified, adding the API's description and its only function's description (welcome).
+Swagger documentation: https://deployp1iw.herokuapp.com/swagger-ui.html#/
+
+
 ## Which are the technologies used in the code
 
 * Spring ~ Controller side
