@@ -70,7 +70,7 @@ These guides have been followed to deploy the web: https://devcenter.heroku.com/
 
 This web has been documented using Swagger, which allows you to describe the generated API (Controllers) and its functions. The next guide has been followed to document the web: https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
 A new class has been added to the application, SpringSwaggerConf.java, which defines Swagger's configuration. The class HelloController.java has been modified, adding the API's description and its only function's description (welcome).
-Swagger documentation: https://deployp1iw.herokuapp.com/swagger-ui.html#/
+Swagger documentation: https://deployp1iw.herokuapp.com/swagger-ui/#/
 
 
 ## Which are the technologies used in the code
