@@ -9,6 +9,9 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 
+/**
+ * This class is used to zip all about HTTP protocol and GET request
+ */
 public class GetRequest {
 
     private URL urlForGetRequest;
@@ -16,6 +19,9 @@ public class GetRequest {
     private HttpURLConnection conection;
     private StringBuffer response;
 
+    /**
+     * Constructor; no param needed
+     */
     public GetRequest() throws IOException {
         super();
         urlForGetRequest = new URL("https://official-joke-api.appspot.com/jokes/programming/random");
@@ -34,6 +40,10 @@ public class GetRequest {
         }
     }
 
+    /**
+     * Retrieves the response about the GET request launched in the constructor
+     * @return String object, can be null if request fails, else return json in text plain 
+     */
     public String getJSON() {
         if (response != null) return response.toString();
         else return null;
