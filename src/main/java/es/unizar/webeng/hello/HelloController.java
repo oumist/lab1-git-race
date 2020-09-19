@@ -25,12 +25,13 @@ public class HelloController {
     private String currentDay = sdf.format(new Date()).substring(0,2);
 
     /**
-     * This method is called when requested by GET petition to
-     * main webpage (/). Puts current time and a message on a
-     * Map so it can be read by view (JSP)
+     * A controller method which is called when the root endpoint is ordered by a client.
      *
-     * @param model This is the map where we put the data
-     * @return JSP name view.
+     * It modifies the model, setting into the key "time" the actual date and into the key "message" the
+     * hardcoded value assigned to the attribute "message".
+     *
+     * @param model the MVC model
+     * @return "wellcome", hardcoded
      */
     @GetMapping("/")
     public String welcome(Map<String, Object> model) {

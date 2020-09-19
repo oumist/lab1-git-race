@@ -1,7 +1,11 @@
 # Web Engineering 2020-2021 / Lab1 Git Race
 
+This repository contains a web application which prints:
+
 Simple Spring web application which can perform several actions:
 * Get current date & welcome message
+  * The actual date (*Thu Sep 17 16:26:04 CEST 2020*, for example)
+  * A welcome (*Hola alumno*)
 * Add two integer numbers
 * Show current browser and version
 
