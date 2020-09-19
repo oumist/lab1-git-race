@@ -11,14 +11,15 @@ import java.text.SimpleDateFormat;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+
 /**
  * The HelloControler program implements an application that
  * simply displays current time and a static welcome message
  * when requested.
  *
  */
-@Api(value = "Ingeniería Web", description = "API creada para el funcionamento de la web para la práctica 1 de IW")
 @Controller
+@Api(value = "Ingeniería Web", description = "API creada para el funcionamento de la web para la práctica 1 de IW")
 public class HelloController {
     @Value("${app.message:Hello World}")
     private String message;
@@ -36,8 +37,8 @@ public class HelloController {
      * @param model the MVC model
      * @return "wellcome", hardcoded
      */
-    @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
     @GetMapping("/")
+    @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
     public String welcome(Map<String, Object> model) {
 
         /* Current day in integer form */
