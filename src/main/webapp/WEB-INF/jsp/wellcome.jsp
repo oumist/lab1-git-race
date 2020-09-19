@@ -8,6 +8,7 @@
       href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <body>
 <kbd>${time}  <span class="glyphicon glyphicon-console"></span>  ${message}</kbd><br/>
+<kbd>Today's lucky colour is ${luckyColor}</kbd><br/>
 <kbd>${joke_const}</kbd><br/>
 <kbd>+</kbd><kbd>${joke_plus}</kbd><br/>
 <kbd>-</kbd><kbd>${joke_mins}</kbd><br/>
