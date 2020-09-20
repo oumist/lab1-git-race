@@ -54,31 +54,11 @@ public class HelloController {
         model.put("time", new Date());
         model.put("message", message);
         model.put("joke_const", joke_const);
-        GetRequest joke = null;
-        // Getting programming joke from external api
-        try {
-            joke = new GetRequest();
-        } catch (Exception e) {
-            //efe
-        }
-        if (joke != null){
-            String[] parts = joke.getJSON().split(",");
-            String plus = null, minus = null;
-            for (String i: parts){
-                if(i.startsWith("\"setup\"") && plus == null) plus = i.substring(9,i.length()-1);
-                if(i.startsWith("\"punchline\"") && minus == null) minus = i.substring(13,i.length()-3);
-            }
-            // Parse failed??
-            if (plus == null || minus == null){
-                model.put("joke_plus", "ERROR");
-                model.put("joke_mins", "ERROR");
-            } else {
-                model.put("joke_plus", plus);
-                model.put("joke_mins", minus);
-            }
-        }else{
+        GetRequest joke = new GetRequest();
+        if (joke.isSuccess()){
+            model.put("joke_plus", joke.AllJoke());
+        } else {
             model.put("joke_plus", "ERROR");
-            model.put("joke_mins", "ERROR");
         }
         return "wellcome";
     }
