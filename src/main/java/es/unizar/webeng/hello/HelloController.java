@@ -70,7 +70,6 @@ public class HelloController {
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         model.put("dice", dice);
         model.put("java", System.getProperty("java.version"));
-        model.put("os", System.getProperty("os.name"));
 
         try {
             InetAddress ip = InetAddress.getLocalHost();
