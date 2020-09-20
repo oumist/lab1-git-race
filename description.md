@@ -154,6 +154,9 @@ STEPS:
 
 	If any modification is made to the repository, we must use the command "git push" to push the changes to the CodeCommit branch and then use "eb deploy" to re-run the Elastic Beanstalk environment with the update.
 
+	NOTE:
+		- If any of the "eb" commands are not working, it is possible to use the command "python <python-scripts-folder>/eb-script.py"
+
 
 	
 
