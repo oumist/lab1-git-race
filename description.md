@@ -149,7 +149,7 @@ STEPS:
 	After all these steps, the app should be up and running.
 
 	In my case, the URL is:
-	https://lab1-git-race-app-env.eu-west-3.elasticbeanstalk.com
+	http://lab1-git-race-app-env.eu-west-3.elasticbeanstalk.com
 
 
 	If any modification is made to the repository, we must use the command "git push" to push the changes to the CodeCommit branch and then use "eb deploy" to re-run the Elastic Beanstalk environment with the update.
