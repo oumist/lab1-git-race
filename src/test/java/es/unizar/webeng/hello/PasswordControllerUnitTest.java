@@ -56,4 +56,18 @@ public class PasswordControllerUnitTest {
         assert aux.length() > 0;
     }
 
+    /**
+     * Performs a test with strange characters
+     */
+
+     @Test
+     public void testPasswordStrange() throws Exception {
+         HashMap<String, String> map = new HashMap<>();
+         String view = controller.passGen("キターȓ̷͓͉͈̺̿e̷͖̔̂̀̚", map);
+         assertThat(view, is("pass"));
+         assertThat(map.containsKey("password"), is(true));
+         String aux = map.get("password");
+         assert aux.length() > 0;
+     }
+
 }
