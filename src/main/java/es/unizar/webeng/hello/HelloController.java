@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiOperation;
 public class HelloController {
     @Value("${app.message:Hello World}")
     private String message;
+    private String link = "Abre este enlace";
 
     /* Current day in string form */
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -55,6 +56,7 @@ public class HelloController {
 
         model.put("time", new Date());
         model.put("message", message);
+        model.put("link", link);
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         return "wellcome";
     }
