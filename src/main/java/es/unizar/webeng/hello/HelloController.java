@@ -42,7 +42,7 @@ public class HelloController {
      */
     @GetMapping("/")
     @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
-    public String welcome(Map<String, Object> model) {
+    public String rollTheDice(Map<String, Object> model) {
 
         /* Current day in integer form */
         Integer num = Integer.parseInt(currentDay); 
