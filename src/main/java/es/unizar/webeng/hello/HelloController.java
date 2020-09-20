@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.Map;
 import java.text.SimpleDateFormat;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 
 /**
  * The HelloControler program implements an application that
@@ -16,6 +19,7 @@ import java.text.SimpleDateFormat;
  *
  */
 @Controller
+@Api(value = "Ingeniería Web", description = "API creada para el funcionamento de la web para la práctica 1 de IW")
 public class HelloController {
     @Value("${app.message:Hello World}")
     private String message;
@@ -34,6 +38,7 @@ public class HelloController {
      * @return "wellcome", hardcoded
      */
     @GetMapping("/")
+    @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
     public String welcome(Map<String, Object> model) {
 
         /* Current day in integer form */
