@@ -7,6 +7,7 @@ Simple Spring web application which can perform several actions:
 * Add two integer numbers
 * Show a link to a youtube video
 * Show current browser and version
+* Roll the dice to resolve disputes
 
 ## Table of Contents
 
