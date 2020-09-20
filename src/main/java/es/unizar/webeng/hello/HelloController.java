@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Date;
 import java.util.Map;
+import java.util.Random;
 import java.text.SimpleDateFormat;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 
 /**
@@ -17,11 +21,14 @@ import java.text.SimpleDateFormat;
  *
  */
 @Controller
+@Api(value = "Ingeniería Web", description = "API creada para el funcionamento de la web para la práctica 1 de IW")
 public class HelloController {
-    @Value("${app.message:Hello World}")
+
+    @Value("${app.message:Press F5 to roll the dice}")
     private String message;
     @Value("${app.joke_const:Hello World}")
     private String joke_const;
+    private String link = "Abre este enlace";
 
     /* Current day in string form */
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -31,13 +38,14 @@ public class HelloController {
      * A controller method which is called when the root endpoint is ordered by a client.
      *
      * It modifies the model, setting into the key "time" the actual date and into the key "message" the
-     * hardcoded value assigned to the attribute "message".
+     * hardcoded value assigned to the attribute "message". Also includes a rolling dice result.
      *
      * @param model the MVC model
      * @return "wellcome", hardcoded
      */
     @GetMapping("/")
-    public String welcome(Map<String, Object> model) {
+    @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
+    public String rollTheDice(Map<String, Object> model) {
 
         /* Current day in integer form */
         Integer num = Integer.parseInt(currentDay);
@@ -51,6 +59,12 @@ public class HelloController {
             model.put("luckyColor", "red");
         }
 
+        // random is needed to generate the seed
+        Random random = new Random();
+
+        // Dice result is calculated between 1 and 6 and storeged in dice
+        int dice = random.nextInt(6) + 1;
+
         model.put("time", new Date());
         model.put("message", message);
         model.put("joke_const", joke_const);
@@ -60,6 +74,9 @@ public class HelloController {
         } else {
             model.put("joke_plus", "ERROR");
         }
+        model.put("link", link);
+        model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
+        model.put("dice", dice);
         return "wellcome";
     }
 }
