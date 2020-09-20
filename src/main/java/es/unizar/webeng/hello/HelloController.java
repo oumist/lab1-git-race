@@ -70,9 +70,11 @@ public class HelloController {
         model.put("joke_const", joke_const);
         GetRequest joke = new GetRequest();
         if (joke.isSuccess()){
-            model.put("joke_plus", joke.AllJoke());
+            model.put("joke_plus", joke.plus());
+            model.put("joke_minus", joke.minus());
         } else {
-            model.put("joke_plus", "ERROR");
+            model.put("joke_plus", "ERROR LOADING JOKES");
+            model.put("joke_minus", "ERROR LOADING JOKES");
         }
         model.put("link", link);
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
