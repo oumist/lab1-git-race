@@ -1,6 +1,8 @@
 package es.unizar.webeng.hello;
 
-
+/**
+ * DTO JokeResponse with standard getters and setters
+ */
 public class JokeResponse {
     private int id;
     private String type;

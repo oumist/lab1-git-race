@@ -68,6 +68,7 @@ public class HelloController {
         model.put("time", new Date());
         model.put("message", message);
         model.put("joke_const", joke_const);
+        // Getting jokes with external api
         GetRequest joke = new GetRequest();
         if (joke.isSuccess()){
             model.put("joke_plus", joke.plus());

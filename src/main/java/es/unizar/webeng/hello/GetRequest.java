@@ -33,18 +33,37 @@ public class GetRequest {
         }
     }
 
+    /**
+     * Getter  simplified
+     * @return res.toString();
+     */
     public String AllJoke(){
         if (res == null) return null;
         return res.toString();
     }
+
+    /**
+     * Returns if this joke contains question+response
+     * @return boolean
+     */
     public boolean isSuccess(){
         if (res == null) return false;
         return res.getSetup() != null && res.getPunchline() != null;
     }
+
+    /**
+     * Getter  simplified
+     * @return res.getSetup();
+     */
     public String plus(){
         if (res == null) return null;
         return res.getSetup();
     }
+
+    /**
+     * Getter  simplified
+     * @return res.getPunchline();
+     */
     public String minus(){
         if (res == null) return null;
         return res.getPunchline();
