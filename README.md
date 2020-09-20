@@ -15,7 +15,7 @@ Some ideas for obtaining a :gift: if you are the first that:
 
 Awarded pull requests:
 
-- [**Home alone I**: create an impresive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2)
+- [**Home alone I**: create an impresive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2) :gift:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Cloud Atlas I**: deploy to Heroku](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/7) :gift: 
