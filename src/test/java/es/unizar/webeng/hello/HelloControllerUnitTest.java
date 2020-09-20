@@ -39,8 +39,12 @@ public class HelloControllerUnitTest {
     public void testMessage() throws Exception {
         HashMap<String, Object> map = new HashMap<>();
         controller.rollTheDice(map);
-        assertTrue((map.containsKey("dice")));
+        assertTrue(map.containsKey("dice"));
         assertTrue(map.containsKey("message"));
+        assertTrue(map.containsKey("host"));
+        assertTrue(map.containsKey("ip"));
+        assertTrue(map.containsKey("java"));
+        assertTrue(map.containsKey("os"));
         assertEquals(map.get("message"), message);
     }
 }

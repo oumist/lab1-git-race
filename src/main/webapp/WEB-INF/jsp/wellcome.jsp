@@ -13,6 +13,10 @@
     <kbd>Today's lucky colour is ${luckyColor}</kbd>
     <kbd>${extra_message}</kbd>
     <a href ="https://www.youtube.com/watch?v=dQw4w9WgXcQ">${link}</a>
+    <p>Your IP is <kbd>${ip}</kbd></p>
+    <p>Your Host is <kbd>${host}</kbd></p>
+    <p>The JAVA version used is <kbd>${java}</kbd></p>
+    <p>The operating system is <kbd>${os}</kbd></p>
     <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"/>
   </body>
 </html>
