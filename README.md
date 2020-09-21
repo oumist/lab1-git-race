@@ -24,7 +24,7 @@ Awarded pull requests:
 User name | NIA | Travis-CI|Score
 ----------|-----|----------|-----
 [UNIZAR-30246-WebEngineering](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race) |30246 | [![Build Status](https://travis-ci.com/UNIZAR-30246-WebEngineering/lab1-git-race.svg)](https://travis-ci.com/UNIZAR-30246-WebEngineering/lab1-git-race)
-[Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/TheRealFreeman/lab1-git-race)
+[Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/andrewknoll/lab1-git-race)
 [Enrique](https://github.com/TheRealFreeman/lab1-git-race) | 766685 | [![Build Status](https://travis-ci.com/TheRealFreeman/lab1-git-race.svg)](https://travis-ci.com/TheRealFreeman/lab1-git-race)
 [Daniel Huici Meseguer](https://github.com/Kifixo/lab1-git-race) | 758635 | [![Build Status](https://travis-ci.com/Kifixo/lab1-git-race.svg)](https://travis-ci.com/Kifixo/lab1-git-race) | :gift:
 [Raúl Javierre Cabrero](https://github.com/rauljavierre/lab1-git-race) | 758906 | [![Build Status](https://travis-ci.com/rauljavierre/lab1-git-race.svg)](https://travis-ci.com/rauljavierre/lab1-git-race) | :gift:

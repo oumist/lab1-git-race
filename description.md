@@ -14,8 +14,8 @@ Simple Spring web application which can perform several actions:
 1. [How to build the code](#how-to-build-the-code)
 1. [How to test the code](#how-to-test-the-code)
 1. [How to run the code](#how-to-run-the-code)
-1. [How to deploy the code in a server (using Heroku)](#how-to-deploy-the-code-in-a-server-(using-Heroku))
-1. [How to deploy the code in a server (using AWS)](#how-to-deploy-the-code-in-a-server-(using-AWS))
+1. [How to deploy the code in a server (using Heroku)](#how-to-deploy-the-code-in-a-server-using-Heroku)
+1. [How to deploy the code in a server (using AWS)](#how-to-deploy-the-code-in-a-server-using-AWS)
 1. [Setting up Redis](#setting-up-redis)
 1. [Using Redis in your application](#using-redis-in-your-application)
 1. [Which are the technologies used in the code](#which-are-the-technologies-used-in-the-code)
@@ -104,47 +104,49 @@ Dicha documentación se puede consultar en el siguiente link: https://deployp1iw
 
 Web's deployment using AWS Elastic Beanstalk and CodeCommit
 
-PREREQUISITES:
-	- Python 2.7, 3.4 or any later version
-	- Any version of the package manager "pip" (for Windows and Linux users. MacOS users will use Homebrew)
-	- An account of any type in https://aws.amazon.com/es/
+### PREREQUISITES:
+
+	-Python 2.7, 3.4 or any later version.
+	-Any version of the package manager **pip** (for Windows and Linux users. MacOS users will use Homebrew)
+	-An account of any type in https://aws.amazon.com/
 
 	Linux Guide: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html
 	Windows Guide: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html
 
-STEPS:
-	1- Having installed all the prerequisites, install the AWS EB CLI, using the pip command (Windows and Linux) or the brew command (MacOS)2- Make sure the python scripts folder is in the PATH variable, as explained in the following tutorial:
+### STEPS:
+
+	1. Having installed all the prerequisites, install the AWS EB CLI, using the pip command (Windows and Linux) or the brew command (MacOS)2- Make sure the python scripts folder is in the PATH variable, as explained in the following tutorial:
 	https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html (Windows and Linux)
 	https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html (MacOS)
 
-	3- Login to our AWS account and access the Identity and Access Management (IAM) console: https://console.aws.amazon.com/iam/home#/home
-	4- Select the "Users" tab on the left and then "Add user(s)"
-	5- Give the new user any name and select (AT LEAST) "programmatic access" in the access options.
-	6- In the permissions tab, assign the policies "AWSCodeCommitFullAccess" and "AWSElasticBeanstalkFullAccess" to the user (or include the user in a group with such policies assigned to it).
-	7- We will not be adding tags at the moment, so we can skip to the end of the creation process.
-	8- When the site tells us the creation was correct, it will show us the name of the user along with its ID access and secret keys. We must keep it for later.
-	9- Click the "Close" button to go back to the IAM console, and then click on the user which was just created.
-	10- Navigate to the "Security Credentials" tab and generate "Git HTTPS for AWS CodeCommit" credentials and save them for later.
+	3. Login to our AWS account and access the Identity and Access Management (IAM) console: https://console.aws.amazon.com/iam/home#/home
+	4. Select the **Users** tab on the left and then **Add user(s)**
+	5. Give the new user any name and select (AT LEAST) **programmatic access** in the access options.
+	6. In the permissions tab, assign the policies **AWSCodeCommitFullAccess** and **AWSElasticBeanstalkFullAccess** to the user (or include the user in a group with such policies assigned to it).
+	7. We will not be adding tags at the moment, so we can skip to the end of the creation process.
+	8. When the site tells us the creation was correct, it will show us the name of the user along with its ID access and secret keys. We must keep them for later.
+	9. Click the **Close** button on the lower part of the site to go back to the IAM console, and then click on the user which was just created.
+	10. Navigate to the **Security Credentials** tab and generate **Git HTTPS for AWS CodeCommit** credentials and save them for later.
 
-	11- With any command terminal, we must browse to the repository and execute the command "eb init" to initiate the process to create the application and setting up the environment.
-	12- First, we will introduce the region that's closest to us (in my case, 17, which is located in Paris)
-	13- If the terminal prompts us for credentials, we must introduce the ID access and secret keys, which you must have obtained in step 8.
-	14- Give the application a name (in my case lab1-git-race-app).
-	15- Select TomCat as the platform.
-	16- Select the latest version of the platform branches (in our case, "Tomcat 8.5 with Corretto 11 running on 64bit Amazon Linux 2" will be enough, since it's compatible with Java 11).
-	17- Continue with CodeCommit and select the repository and branch you want to use.
-	18- If the terminal prompts us for credentials, we must introduce the user and password which we obtained in step 10.
-	19- Since we do not want to connect to the page using SSH, I have not set up SSH (the terminal asks us if we want to).
+	11. With any command terminal, we must browse to the repository and execute the command **eb init** to initiate the process to create the application and setting up the environment.
+	12. First, we will introduce the region that's closest to us (in my case, 17, which is located in Paris)
+	13. If the terminal prompts us for credentials, we must introduce the ID access and secret keys, which you must have obtained in step 8.
+	14. Give the application a name (in my case lab1-git-race-app).
+	15. Select TomCat as the platform.
+	16. Select the latest version of the platform branches (in our case, **Tomcat 8.5 with Corretto 11 running on 64bit Amazon Linux 2** will be enough, since it's compatible with Java 11).
+	17. Continue with CodeCommit and select the repository and branch you want to use.
+	18. If the terminal prompts us for credentials, we must introduce the user and password which we obtained in step 10.
+	19. Since we do not want to connect to the page using SSH, I have not set up SSH (the terminal asks us if we want to).
 
-	20- Execute the command "eb create" and type the name, DNS CNAME, load balancer and Spot Fleet as you want the app to run. (in my case: "lab1-git-race-app-env", "lab1-git-race-app-env", "application", no. This means the traffic will be redirected in the application level, and the Spot Fleet service from Amazon won't be used).
-	21-Re-enter the Git HTTPS credentials.
+	20. Execute the command **eb create** and type the name, DNS CNAME, load balancer and Spot Fleet as you want the app to run. (in my case: **lab1-git-race-app-env**, **lab1-git-race-app-env**, **application**, no. This means the traffic will be redirected in the application level, and the Spot Fleet service from Amazon won't be used).
+	21. Re-enter the Git HTTPS credentials.
 
-	22-Go to the AWS Elastic Beanstalk console and navigate to Environments.
+	22. Go to the AWS Elastic Beanstalk console and navigate to Environments.
 	https://eu-west-3.console.aws.amazon.com/elasticbeanstalk/home?region=eu-west-3#/environments
-	23- Select the environment we just created and go to "Settings" on the left par of the site
-	24- Edit the "Software" section in the settings and add the environment variable "SERVER_PORT" and set it to the value "5000".
+	23. Select the environment we just created and go to **Settings** on the left part of the site
+	24. Edit the **Software** section in the settings and add the environment variable **SERVER_PORT** and set it to the value **5000**.
 	This is so the environment knows which port the server is using (currently 5000).
-	25- Go back to the environment overview (click the name of the environment on the left navigation bar) and wait until the status is showing a big green tick. Then, you can get the URL right below the name.
+	25. Go back to the environment overview (click the name of the environment on the left navigation bar) and wait until the status is showing a big green tick. Then, you can get the URL right below the name.
 
 	After all these steps, the app should be up and running.
 
@@ -152,10 +154,10 @@ STEPS:
 	http://lab1-git-race-app-env.eu-west-3.elasticbeanstalk.com
 
 
-	If any modification is made to the repository, we must use the command "git push" to push the changes to the CodeCommit branch and then use "eb deploy" to re-run the Elastic Beanstalk environment with the update.
+	If any modification is made to the repository, we must use the command **git push** to push the changes to the CodeCommit branch and then use **eb deploy** to re-run the Elastic Beanstalk environment with the update.
 
-	NOTE:
-		- If any of the "eb" commands are not working, it is possible to use the command "python <python-scripts-folder>/eb-script.py"
+### NOTE:
+		- If any of the **eb** commands is not working, it is possible to use the command **python <python-scripts-folder>/eb-script.py**
 
 
 	
