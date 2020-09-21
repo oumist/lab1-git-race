@@ -22,6 +22,7 @@ Simple Spring web application which can perform several actions:
 1. [What means each a specific piece or code](#what-means-each-a-specific-piece-or-code)
 1. [Which is the purpose of a specific Java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
 1. [How to implement code following TDD best practices](#how-to-implement-code-following-tdd-best-practices)
+1. [Copyright issues](#copyright-issues)
 
 ## How to build the code
 
@@ -115,3 +116,7 @@ Here's a brief description of each annotation's function:
 * @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
 
 If the developer wants to replace one of these three annotations for a different one, it would be necessary to substitute the unwanted annotation.
+
+## Copyright issues
+
+Added an image with creative commons license to the web.The source of the image chosen is the following: https://commons.wikimedia.org/wiki/File:Zaragoza_-_Bas%C3%ADlica_del_Pilar_y_r%C3%ADo_Ebro.jpg attributed to [Turol Jones, un artista de cojones from Villanueva del Cascajal, República Independiente de Mi Casa](https://commons.wikimedia.org/wiki/File:Zaragoza_-_Bas%C3%ADlica_del_Pilar_y_r%C3%ADo_Ebro.jpg) / [CC BY](https://creativecommons.org/licenses/by/2.0)
