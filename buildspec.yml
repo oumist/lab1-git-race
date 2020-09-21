@@ -1,7 +1,15 @@
 version: 0.1
 
+phases:
+  build:
+    commands:
+       - echo Build started on `date`
+       - ./gradlew build
+  post_build:
+    commands:
+       - echo Build completed on `date`
+
 artifacts:
   files:
-    - '**/*.war'
+    - 'build/libs/*.war'
   discard-paths: yes
-  base-directory: 'build/libs'
