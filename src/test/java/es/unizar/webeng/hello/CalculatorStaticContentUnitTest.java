@@ -1,20 +1,9 @@
 package es.unizar.webeng.hello;
 
-/**
- * Performs static content unit test to the
- * Calculator JSP template
- *
- * @author Daniel Huici Meseguer (758635)
- * @version 1.0
- * @since 09/17/2020
- *
- */
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -27,30 +16,45 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Performs static content unit test to the
+ * Calculator JSP template
+ *
+ * @author Daniel Huici Meseguer (758635)
+ * @version 1.0
+ * @since 09/17/2020
+ *
+ */
+
 @RunWith(SpringRunner.class)
-@WebMvcTest(HelloController.class)
-public class StaticContentUnitTest {
+@WebMvcTest(CalculatorController.class)
+public class CalculatorStaticContentUnitTest {
 
     @Autowired
     private WebApplicationContext wac;
 
-    @Value("${app.message:Press F5 to roll the dice}")
-    private String message;
-
     private MockMvc mockMvc;
+
+    /**
+     * Setup Mockito test with web context
+     */
 
     @Before
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
 
+    /**
+     * Performs static content test for default
+     * values (0)
+     */
+
     @Test
-    public void testMessage() throws Exception {
-        this.mockMvc.perform(get("/"))
+    public void testCalculator() throws Exception {
+        this.mockMvc.perform(get("/ultra-calculator"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(model().attribute("message", is(message)));
+                .andExpect(model().attribute("values", is("0")))
+                .andExpect(model().attribute("message", is("0")));
     }
-
-
 }

@@ -1,5 +1,10 @@
 package es.unizar.webeng.hello;
 
+/**
+ * Performs unit test to the Wellcome JSP template
+ *
+ */
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,26 +14,33 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.HashMap;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(HelloController.class)
 public class HelloControllerUnitTest {
 
-    @Value("${app.message:Hello World}")
+    @Value("${app.message:Press F5 to roll the dice}")
     private String message;
 
     @Autowired
     private HelloController controller;
 
+    /**
+     * Testing doesn't make much sense in this web service, but we'll do a dumb test
+     */
 
+    /**
+     * Performs static unit content test to the
+     * main JSP template wellcome (message)
+     *
+     */
     @Test
     public void testMessage() throws Exception {
         HashMap<String, Object> map = new HashMap<>();
-        String view = controller.welcome(map);
-        assertThat(view, is("wellcome"));
-        assertThat(map.containsKey("message"), is(true));
-        assertThat(map.get("message"), is(message));
+        controller.rollTheDice(map);
+        assertTrue((map.containsKey("dice")));
+        assertTrue(map.containsKey("message"));
+        assertEquals(map.get("message"), message);
     }
 }

@@ -1,0 +1,22 @@
+swagger: "2.0"
+info:
+  description: "This program runs an application server (embedded into Spring library). [Gradle](https://gradle.org/) is used for managing dependencies and building the project."
+  version: "1.0.0"
+  title: "Git Race"
+  contact:
+    email: "758267@unizar.es"
+  license:
+    name: "MIT"
+    url: "https://opensource.org/licenses/MIT"
+host: "localhost:8080"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /:
+    get:
+      summary: "Gets current date and a messsage"
+      description: "Returns a HTML page that contains the current date and a message (Hola alumno)"
+      responses:
+        200:
+          description: OK

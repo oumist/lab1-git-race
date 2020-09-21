@@ -3,13 +3,17 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<title>Hello world</title>
-<link rel="stylesheet" type="text/css"
-      href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
-<body>
-<kbd>${time}<span class="glyphicon glyphicon-console"></span>${message}</kbd>
-<p><img src="images/Pilar.jpg"></p>
-<script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
-</body>
-
+  <title>Roll the dice</title>
+  <link rel="stylesheet" type="text/css"
+        href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
+  <body>
+    <h2>${message} &#8594; ${dice}</h2>
+    <kbd>${time}<span class="glyphicon glyphicon-console"/>${message}</kbd>
+    <br/>
+    <kbd>Today's lucky colour is ${luckyColor}</kbd>
+    <kbd>${extra_message}</kbd>
+    <a href ="https://www.youtube.com/watch?v=dQw4w9WgXcQ">${link}</a>
+    <p><img src="images/Pilar.jpg"/></p>
+    <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"/>
+  </body>
 </html>

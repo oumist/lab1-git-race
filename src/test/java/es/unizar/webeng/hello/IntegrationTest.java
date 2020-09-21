@@ -1,5 +1,10 @@
 package es.unizar.webeng.hello;
 
+/**
+ * Performs integration test for webpage
+ *
+ */
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -23,14 +28,24 @@ public class IntegrationTest {
     @LocalServerPort
     private int port = 0;
 
+    /**
+     * Performs integration test for main webpage
+     *
+     */
+
     @Test
     public void testHome() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
                 "http://localhost:" + this.port, String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         assertTrue("Wrong body (title doesn't match):\n" + entity.getBody(), entity
-                .getBody().contains("<title>Hello"));
+                .getBody().contains("<title>Roll"));
     }
+
+    /**
+     * Performs integration test for CSS
+     *
+     */
 
     @Test
     public void testCss() throws Exception {
