@@ -7,6 +7,8 @@ Simple Spring web application which can perform several actions:
 * Add two integer numbers
 * Show a link to a youtube video
 * Show current browser and version
+* Show your IP, Hostname and the JAVA version used
+* Generate a safe password and modify it
 * Roll the dice to resolve disputes
 
 ## Table of Contents
@@ -22,6 +24,9 @@ Simple Spring web application which can perform several actions:
 1. [What means each a specific piece or code](#what-means-each-a-specific-piece-or-code)
 1. [Which is the purpose of a specific Java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
 1. [How to implement code following TDD best practices](#how-to-implement-code-following-tdd-best-practices)
+1. [How to access the password generator](#how-to-access-the-password-generator)
+1. [How works the password generator](#how-works-the-password-generator)
+1. [How to modify the password generated](#how-to-modify-the-password-generated)
 
 ## How to build the code
 
@@ -115,3 +120,30 @@ Here's a brief description of each annotation's function:
 * @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
 
 If the developer wants to replace one of these three annotations for a different one, it would be necessary to substitute the unwanted annotation.
+
+## How to access the password generator
+
+The password generator is found in the path /password. You can easily find a link at the bottom of the welcome page.
+
+## How works the password generator
+
+When you access the password generator, you have to enter one or more words to generate a password. The words entered are encrypted using AES, which
+is a symmetric encryption algorithm. The secret key used is the actual date with the next format: yyyy-MM-dd HH:mm:ss.
+
+If none words are input, the password isn't generated. Otherwise, it shows the password and statistics about it:
+* Number of characters (length)
+* Number of special characters
+* Number of uppercase letters
+* Number of lowercase letters
+* Number of digits
+
+## How to modify the password generated
+
+Below the stadistics, you can modify the password specifying how many characters you want to add at random positions. These characters can be:
+* special characters
+* uppercase letters
+* lowercase letters
+* digits
+* random characters
+
+When a negative number is input, it is ignored.

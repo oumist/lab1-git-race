@@ -8,7 +8,7 @@
 
 <h1>Password generator using AES encryption</h1>
 <br>
-<p>The generated password is <textarea id="copyPass" rows="1" readonly style="border: none; resize: none; width: 60%; height: 15px">${password}</textarea></p>
+<p>The generated password is <textarea id="copyPass" rows="1" readonly style="border: none; resize: none; width: 80%; height: 20px">${password}</textarea></p>
 <button onclick="copy()">Copy password</button>
 <br>
 <p>This password contains: </p>
@@ -36,8 +36,8 @@
 </form>
 <button value="Modify" onClick="submit()">Modify</button>
 <br><br>
-<kbd><a href="/password">Generate another password</a></kbd>
-<kbd><a href="/">Return to the main page</a></kbd>
+<kbd><a href="/password" style="color: white">Generate another password</a></kbd>
+<kbd><a href="/" style="color: white">Return to the main page</a></kbd>
 <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
 <script>
     function copy() {

@@ -40,7 +40,7 @@ public class PasswordController {
      * @param len Length of the password
      */
 
-    private void stadistics(Map<String, Object> model, String pass, int len) {
+    private void statistics(Map<String, Object> model, String pass, int len) {
         int num = 0, upp = 0, spe = 0, low = 0;
         for(int i = 0; i < len; ++i) {
             if(Character.isUpperCase(pass.charAt(i))) ++upp;
@@ -117,7 +117,7 @@ public class PasswordController {
         } catch (Exception e) {
             return "pass";
         }
-        stadistics(model, pass, pass.length());
+        statistics(model, pass, pass.length());
         return "showpass";
     }
 
@@ -135,8 +135,8 @@ public class PasswordController {
      * @return JSP name
      */
 
-    @RequestMapping(value = "/modPass", method = RequestMethod.POST, consumes =
-            MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value="/modPass", method=RequestMethod.POST, 
+            consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String modifyPass(@RequestParam("add") String add, 
             @RequestParam("special") String spe, @RequestParam("lower") String low, 
             @RequestParam("upper") String upp, @RequestParam("numb") String num,
@@ -150,7 +150,7 @@ public class PasswordController {
             dig = Integer.parseInt(num);
         } catch (NumberFormatException e) {
             model.put("password", pass);
-            stadistics(model, pass, len);
+            statistics(model, pass, len);
             return "showpass";
         }
 
@@ -193,7 +193,7 @@ public class PasswordController {
         }
 
         model.put("password", pass);
-        stadistics(model, pass, len);
+        statistics(model, pass, len);
         return "showpass";
     }
 

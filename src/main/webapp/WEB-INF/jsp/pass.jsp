@@ -15,7 +15,7 @@
 </form>
 <br>
 <br>
-<kbd><a href="/">Return to the main page</a></kbd>
+<kbd><a href="/" style="color: white">Return to the main page</a></kbd>
 <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
 </body>
 

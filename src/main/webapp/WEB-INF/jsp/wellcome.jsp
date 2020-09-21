@@ -17,7 +17,7 @@
     <p>Your Host is <kbd>${host}</kbd></p>
     <p>The JAVA version used is <kbd>${java}</kbd></p>
     <br>
-    <kbd><a href="/password">Access to the password generator</a></kbd>
+    <kbd><a href="/password" style="color: white">Access to the password generator</a></kbd>
     <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"/>
   </body>
 </html>
