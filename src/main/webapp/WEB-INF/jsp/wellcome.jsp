@@ -13,6 +13,7 @@
     <kbd>Today's lucky colour is ${luckyColor}</kbd>
     <kbd>${extra_message}</kbd>
     <a href ="https://www.youtube.com/watch?v=dQw4w9WgXcQ">${link}</a>
+    <p><img src="images/Pilar.jpg"/></p>
     <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"/>
   </body>
 </html>

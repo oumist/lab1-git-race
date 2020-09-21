@@ -33,4 +33,5 @@ User name | NIA | Travis-CI|Score
 [Victor Jarreta](https://github.com/VJarreta/lab1-git-race) | 738737 | [![Build Status](https://travis-ci.com/VJarreta/lab1-git-race.svg)](https://travis-ci.com/VJarreta/lab1-git-race) | :gift:
 [Marcos Nuez Martinez](https://github.com/Markles01/lab1-git-race) | 761319 | [![Build Status](https://travis-ci.com/Markles01/lab1-git-race.svg)](https://travis-ci.com/Markles01/lab1-git-race)
 [Jorge Turbica](https://github.com/turbica/lab1-git-race) | 723883 | [![Build Status](https://travis-ci.com/turbica/lab1-git-race.svg)](https://travis-ci.com/turbica/lab1-git-race)
+[Victor Martinez Lascorz](https://github.com/viriannn/lab1-git-race)| 738845 | [![Build Status](https://travis-ci.com/viriannn/lab1-git-race.svg)](https://travis-ci.com/viriannn/lab1-git-race)
 your name | your nia | your Travis-ci status
