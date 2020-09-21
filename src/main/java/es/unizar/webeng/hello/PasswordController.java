@@ -69,7 +69,6 @@ public class PasswordController {
     /**
      * Generates a password from the words entered by the user and a secret key
      * which is the actual date. It uses AES as the encryption method
-     * Source of AES encryption: https://howtodoinjava.com/java/java-security/java-aes-encryption-example/
      * 
      * @param enc The word or words entered by the user
      * @param model The map with the data

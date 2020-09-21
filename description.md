@@ -137,6 +137,8 @@ If none words are input, the password isn't generated. Otherwise, it shows the p
 * Number of lowercase letters
 * Number of digits
 
+Source of AES encryption: https://howtodoinjava.com/java/java-security/java-aes-encryption-example/
+
 ## How to modify the password generated
 
 Below the stadistics, you can modify the password specifying how many characters you want to add at random positions. These characters can be:
