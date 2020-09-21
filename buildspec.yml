@@ -9,7 +9,7 @@ phases:
     commands:
        - echo Build completed on `date`
        - cd build/libs
-       - zip -r lab1-git-race.zip *.war
+       - zip -r lab1-git-race.zip ./*.war
 artifacts:
   files:
     - 'build/libs/lab1-git-race.zip'
