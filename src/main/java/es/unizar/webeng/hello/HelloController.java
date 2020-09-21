@@ -1,4 +1,5 @@
 package es.unizar.webeng.hello;
+import es.unizar.webeng.hello.GetRequest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ public class HelloController {
 
     @Value("${app.message:Press F5 to roll the dice}")
     private String message;
+    @Value("${app.joke_const:Hello World}")
+    private String joke_const;
     private String link = "Abre este enlace";
 
     /* Current day in string form */
@@ -45,7 +48,7 @@ public class HelloController {
     public String rollTheDice(Map<String, Object> model) {
 
         /* Current day in integer form */
-        Integer num = Integer.parseInt(currentDay); 
+        Integer num = Integer.parseInt(currentDay);
         if(num % 5 == 0 ){
             model.put("luckyColor", "black");
         } else if(num % 2 == 0){
@@ -64,6 +67,16 @@ public class HelloController {
 
         model.put("time", new Date());
         model.put("message", message);
+        model.put("joke_const", joke_const);
+        // Getting jokes with external api
+        GetRequest joke = new GetRequest();
+        if (joke.isSuccess()){
+            model.put("joke_plus", joke.plus());
+            model.put("joke_minus", joke.minus());
+        } else {
+            model.put("joke_plus", "ERROR LOADING JOKES");
+            model.put("joke_minus", "ERROR LOADING JOKES");
+        }
         model.put("link", link);
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         model.put("dice", dice);
