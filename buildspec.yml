@@ -8,7 +8,7 @@ phases:
   post_build:
     commands:
        - echo Build completed on `date`
-       - mv build/libs/*.war app.war
+       - mv build/libs/*.war ROOT.war
 artifacts:
   files:
     - 'app.war'
