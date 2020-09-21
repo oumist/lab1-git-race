@@ -8,7 +8,7 @@ phases:
   post_build:
     commands:
        - echo Build completed on `date`
-       - zip -r -D lab1-git-race.zip 'build/libs' -i '/*.war'
+       - zip -r -j lab1-git-race.zip 'build/libs' -i '/*.war'
 artifacts:
   files:
     - 'lab1-git-race.zip'
