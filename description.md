@@ -22,7 +22,8 @@ Simple Spring web application which can perform several actions:
 1. [What means each a specific piece or code](#what-means-each-a-specific-piece-or-code)
 1. [Which is the purpose of a specific Java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
 1. [How to implement code following TDD best practices](#how-to-implement-code-following-tdd-best-practices)
-
+1. [How to get the required API keys](#how-to-get-the-required-api-keys)
+1. [How to access to the LOTR feature](#how-to-access-to-the-lotr-feature)
 ## How to build the code
 
 This App's code is built using [Gradle](http://gradle.org), for its installation please refer to the [Gradle installation guide](https://docs.gradle.org/current/userguide/installation.html). To then build the code follow the following steps:
@@ -57,3 +58,20 @@ Gradle can perform all tests automatically.
 * Java ~ Controller engine
 
 This project's code is documented following Javadoc standards.
+
+## How to get the required api keys
+
+This application is using [The One API](https://the-one-api.dev/) therefore,
+an API key is required.
+To get this key access to the website [The One API SIGN UP](https://the-one-api.dev/sign-up)
+and create an account using a valid email. Once the account has been created you will
+received a key.
+
+Finally add the value of the key to the variable app.api_key in the application.properties
+file.
+
+
+## How to access to the LOTR feature
+
+Access to the path /rings-quote to use this feature.
+Remember to set the api key first to use it.  

@@ -1,5 +1,6 @@
-package es.unizar.webeng.hello.lotr;
+package es.unizar.webeng.hello;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -26,7 +27,8 @@ public class RingsQuote {
     //URI
     private  String API_URI="https://the-one-api.dev/v2/quote";
     //API Key
-    private  String API_KEY;
+    @Value("${app.api_key}")
+    private  String api_key;
 
     private  String quoteChosen="";
 
@@ -37,10 +39,10 @@ public class RingsQuote {
      * @return "lordrings"
      */
     @GetMapping("/rings-quote")
-    public String welcome(Map<String, Object> model) {
+    public String findLOTRquote(Map<String, Object> model) {
         request = HttpRequest.newBuilder()
                 .GET()
-                .header("Authorization", "Bearer COd1dmY6BQA2Pujr05Bv")
+                .header("Authorization", api_key)
                 .uri(URI.create(API_URI))
                 .build();
         try {
@@ -51,17 +53,17 @@ public class RingsQuote {
             //json parse
             String text=response.body();
             String requiredString = text.substring(text.indexOf("[") + 1, text.indexOf("]"));
-            String[] parts = requiredString.split("\\{");
+            String[] phrases = requiredString.split("\\{");
 
             
-            int random_int = (int)(Math.random() * ((parts.length-1)));
+            int random = (int)(Math.random() * ((phrases.length-1)));
 
-            parts[random_int]=parts[random_int].substring(parts[random_int].indexOf("dialog") + 1, parts[random_int].indexOf("movie"));
-            parts[random_int]=parts[random_int].substring(parts[random_int].indexOf(":") + 1, parts[random_int].indexOf(","));
+            phrases[random]=phrases[random].substring(phrases[random].indexOf("dialog") + 1, phrases[random].indexOf("movie"));
+            phrases[random]=phrases[random].substring(phrases[random].indexOf(":") + 1, phrases[random].indexOf(","));
 
-            parts[random_int]=parts[random_int].replaceAll("\"","");
+            phrases[random]=phrases[random].replaceAll("\"","");
 
-            quoteChosen=parts[random_int];
+            quoteChosen=phrases[random];
 
             model.put("prhaseoftherings", quoteChosen);
 
@@ -73,7 +75,6 @@ public class RingsQuote {
             quoteChosen="The API is not working anymore!";
 
         }
-
         model.put("prhaseoftherings", quoteChosen);
 
         return "lordrings";
