@@ -23,9 +23,6 @@ import static org.junit.Assert.assertThat;
 @WebMvcTest(PasswordController.class)
 public class PasswordControllerUnitTest {
 
-    @Value("${app.error}")
-    private String error;
-
     @Autowired
     private PasswordController controller;
 

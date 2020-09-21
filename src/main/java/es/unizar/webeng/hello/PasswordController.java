@@ -31,6 +31,15 @@ import javax.crypto.spec.SecretKeySpec;
 @Controller
 public class PasswordController {
 
+    /**
+     * Calculates the number of occurrences of special characters, numbers and
+     * uppercase and lowercase letters of the password passed by parameter
+     * 
+     * @param model The map with the data
+     * @param pass The password 
+     * @param len Length of the password
+     */
+
     private void stadistics(Map<String, Object> model, String pass, int len) {
         int num = 0, upp = 0, spe = 0, low = 0;
         for(int i = 0; i < len; ++i) {
@@ -46,30 +55,47 @@ public class PasswordController {
         model.put("num", num);
     }
 
+    /**
+     * Returns the name of the JSP when requested by a GET petition to /password
+     * 
+     * @return JSP name
+     */
+
     @GetMapping("/password")
     public String passGen() {
         return "pass";
     }
 
-    @RequestMapping(value = "/showpassword", method = RequestMethod.POST, consumes =
-            MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    /**
+     * Generates a password from the words entered by the user and a secret key
+     * which is the actual date. It uses AES as the encryption method
+     * Source of AES encryption: https://howtodoinjava.com/java/java-security/java-aes-encryption-example/
+     * 
+     * @param enc The word or words entered by the user
+     * @param model The map with the data
+     * @return JSP name (pass if incorrect, otherwise showpass)
+     */
+
+    @RequestMapping(value="/showpassword", method=RequestMethod.POST, 
+            consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String passGen(@RequestParam("word") String enc, Map<String, Object> model) {
 
+        /**
+         * If the word entered is empty, the password can't be generated
+         */
         if(enc.trim().length() == 0) {
             return "pass";
         }
 
         SecretKeySpec secretKey = null;
-        byte[] key;
 
         /**
          * The first step is to define the secret key to encrypt the words
          */
 
         try {
-            key = ((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(new Date())).getBytes("UTF-8");
             MessageDigest sha = MessageDigest.getInstance("SHA-1");
-            key = sha.digest(key);
+            byte[] key = sha.digest(((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(new Date())).getBytes("UTF-8"));
             key = Arrays.copyOf(key, 32); 
             secretKey = new SecretKeySpec(key, "AES");
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
@@ -94,6 +120,20 @@ public class PasswordController {
         stadistics(model, pass, pass.length());
         return "showpass";
     }
+
+    /**
+     * Modify the password adding at random positions a number of characters
+     * of different types (uppercase, lowercase, digits, special) 
+     * 
+     * @param add Number of random characters
+     * @param spe Number of special characters
+     * @param low Number of lowercase letters
+     * @param upp Number of uppercase letters
+     * @param num Number of digits
+     * @param pass The password to modify
+     * @param model The map with the data
+     * @return JSP name
+     */
 
     @RequestMapping(value = "/modPass", method = RequestMethod.POST, consumes =
             MediaType.APPLICATION_FORM_URLENCODED_VALUE)
