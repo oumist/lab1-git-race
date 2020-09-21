@@ -8,8 +8,8 @@ phases:
   post_build:
     commands:
        - echo Build completed on `date`
-       - zip -r -j lab1-git-race.zip 'build/libs' -i '/*.war'
+       - mv build/libs/*.war app.war
 artifacts:
   files:
-    - 'lab1-git-race.zip'
+    - 'app.war'
   discard-paths: yes
