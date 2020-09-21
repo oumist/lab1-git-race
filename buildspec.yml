@@ -11,5 +11,5 @@ phases:
        - mv build/libs/*.war ROOT.war
 artifacts:
   files:
-    - 'app.war'
+    - 'ROOT.war'
   discard-paths: yes
