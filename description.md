@@ -1,6 +1,8 @@
+<!-- omit in toc -->
 # Web Engineering 2020-2021 / Lab1 Git Race
 
 Simple Spring web application which can perform several actions:
+
 * Get current date & welcome message
   * The actual date (*Thu Sep 17 16:26:04 CEST 2020*, for example)
   * A welcome (*Hola alumno*)
@@ -11,23 +13,21 @@ Simple Spring web application which can perform several actions:
 * Generate a safe password and modify it
 * Roll the dice to resolve disputes
 
+<!-- omit in toc -->
 ## Table of Contents
 
-1. [How to build the code](#how-to-build-the-code)
-1. [How to test the code](#how-to-test-the-code)
-1. [How to run the code](#how-to-run-the-code)
-1. [How to deploy the code in a server](#how-to-deploy-the-code-in-a-server)
-1. [Setting up Redis](#setting-up-redis)
-1. [Using Redis in your application](#using-redis-in-your-application)
-1. [Which are the technologies used in the code](#which-are-the-technologies-used-in-the-code)
-1. [How these technologies work](#how-these-technologies-work)
-1. [What means each a specific piece or code](#what-means-each-a-specific-piece-or-code)
-1. [Which is the purpose of a specific Java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
-1. [How to implement code following TDD best practices](#how-to-implement-code-following-tdd-best-practices)
-1. [How to access the password generator](#how-to-access-the-password-generator)
-1. [How works the password generator](#how-works-the-password-generator)
-1. [How to modify the password generated](#how-to-modify-the-password-generated)
-
+- [How to build the code](#how-to-build-the-code)
+- [How to test the code](#how-to-test-the-code)
+- [How to run the code](#how-to-run-the-code)
+- [How to deploy the code in a server](#how-to-deploy-the-code-in-a-server)
+- [Which are the technologies used in the code](#which-are-the-technologies-used-in-the-code)
+- [Which is the purpose of a specific java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
+- [Copyright issues](#copyright-issues)
+- [How to get the required api keys](#how-to-get-the-required-api-keys)
+- [How to access to the LOTR feature](#how-to-access-to-the-lotr-feature)
+- [How to access the password generator](#how-to-access-the-password-generator)
+- [How works the password generator](#how-works-the-password-generator)
+- [How to modify the password generated](#how-to-modify-the-password-generated)
 ## How to build the code
 
 This App's code is built using [Gradle](http://gradle.org), for its installation please refer to the [Gradle installation guide](https://docs.gradle.org/current/userguide/installation.html). To then build the code follow the following steps:
@@ -61,22 +61,20 @@ In order to build and execute the project you have to do:
 
 Web's deployment using Heroku and GitHub:
 
-	-Install Git Bash and Heroku CLI locally
-	-Log in Git and Heroku
-	-Create a new app in Heroku's web with the desired name (deployp1iw)
-	-Add dependencies in build.gradle
-	-Create a Procfile file that executes app's .war
-	-While on app's root directory (locally), create a link between GitHub and Heroku: heroku git:remote -a deployp1iw
-	-Push to Heroku: git push heroku master
+- Install Git Bash and Heroku CLI locally
+- Log in Git and Heroku
+- Create a new app in Heroku's web with the desired name (deployp1iw)
+- Add dependencies in build.gradle
+- Create a Procfile file that executes app's .war
+- While on app's root directory (locally), create a link between GitHub and Heroku: heroku git:remote -a deployp1iw
+- Push to Heroku: git push heroku master
 
-Once the previous steps have been followed, the web is deployed, the following link shows the web (it may take time to load the web due to Heroku's restrictions on free apps): https://deployp1iw.herokuapp.com/
-These guides have been followed to deploy the web: https://devcenter.heroku.com/articles/git (deploy using Git) and https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku (deploy using Gradle).
+Once the previous steps have been followed, the web is deployed, the following link shows the web (it may take time to load the web due to Heroku's restrictions on free apps): <https://deployp1iw.herokuapp.com/>
+These guides have been followed to deploy the web: <https://devcenter.heroku.com/articles/git> (deploy using Git) and <https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku> (deploy using Gradle).
 
-
-This web has been documented using Swagger, which allows you to describe the generated API (Controllers) and its functions. The next guide has been followed to document the web: https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+This web has been documented using Swagger, which allows you to describe the generated API (Controllers) and its functions. The next guide has been followed to document the web: <https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api>
 A new class has been added to the application, SpringSwaggerConf.java, which defines Swagger's configuration. The class HelloController.java has been modified, adding the API's description and its only function's description (welcome).
-Swagger documentation: https://deployp1iw.herokuapp.com/swagger-ui/#/
-
+Swagger documentation: <https://deployp1iw.herokuapp.com/swagger-ui/#/>
 
 ## Which are the technologies used in the code
 
@@ -87,26 +85,9 @@ Swagger documentation: https://deployp1iw.herokuapp.com/swagger-ui/#/
 
 This project's code is documented following Javadoc standards.
 
-## How to deploy the code in a server
-
-Despliegue de la Web utilizando Heroku y GitHub:
-
-	-El primer paso es tener instalados Git Bash y Heroku CLI
-	-Estar logueado en ambas plataformas
-	-Se crea una nueva app en Heroku con el nombre que se desee (deployp1iw)
-	-Añadir al build.gradle las líneas necesarias para el despliegue de la web.
-	-Crear un fichero Procfile sin extensión con la ejecución del .war de la aplicación.
-	-En el directorio raíz de la aplicación, donde también se ha declarado un repositorio git con un commit hecho, se crea una conexión GitHub-Heroku con el siguiente comando: heroku git:remote -a nombre_app (nombre_app es deployp1iw en este caso), y pushear el contenido del repositorio: git push heroku master.
-
-Una vez seguidos los pasos anteriores la web se encuentra desplegada, en el siguiente link se muestra la web (es posible que tarde en cargar la página, dadas las restricciones de Heroku a aplicaciones gratuitas): https://deployp1iw.herokuapp.com/
-Se han seguido las siguientes guías para desplegar la aplicación: https://devcenter.heroku.com/articles/git (para desplegar con Git) y https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku (para desplegar con Gradle).
-
-Para la documentación de la aplicación se ha utilizado Swagger que permite describir la API generada por la web (Controllers) y sus funciones. Para esta tarea se ha seguido la siguiente guía: https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
-Las inyecciones de dependencias hechas en Maven en la guía se han transcrito a dependencias en build.gradle, se ha creado una nueva clase SpringSwaggerConf.java que define la configuración de Swagger y en la clase HelloController.java se han definido las descripciones para la API y para su única función (welcome).
-Dicha documentación se puede consultar en el siguiente link: https://deployp1iw.herokuapp.com/swagger-ui.html#/
-
 ## Which is the purpose of a specific java annotation
 
+<!-- omit in toc -->
 ### @SpringBootApplication
 
 This annotation is used on top of most Spring Boot main class programs, as it enables the developer an to configure and scan for components automatically.
@@ -120,6 +101,25 @@ Here's a brief description of each annotation's function:
 * @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
 
 If the developer wants to replace one of these three annotations for a different one, it would be necessary to substitute the unwanted annotation.
+
+## Copyright issues
+
+Added an image with creative commons license to the web.The source of the image chosen is the following: <https://commons.wikimedia.org/wiki/File:Zaragoza_-_Bas%C3%ADlica_del_Pilar_y_r%C3%ADo_Ebro.jpg> attributed to [Turol Jones, un artista de cojones from Villanueva del Cascajal, República Independiente de Mi Casa](https://commons.wikimedia.org/wiki/File:Zaragoza_-_Bas%C3%ADlica_del_Pilar_y_r%C3%ADo_Ebro.jpg) / [CC BY](https://creativecommons.org/licenses/by/2.0).
+
+## How to get the required api keys
+
+This application is using [The One API](https://the-one-api.dev/) therefore, an API key is required.
+To get this key access to the website [The One API SIGN UP](https://the-one-api.dev/sign-up)
+and create an account using a valid email. Once the account has been created you will
+received a key.
+
+Finally add the value of the key to the variable app.api_key in the application.properties
+file.
+
+## How to access to the LOTR feature
+
+Access to the path /rings-quote to use this feature.
+Remember to set the api key first to use it.  
 
 ## How to access the password generator
 
