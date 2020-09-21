@@ -8,13 +8,14 @@
 
 <h1>Password generator using AES encryption</h1>
 
-<form action = "/password" method="post">
+<form action="/showpassword" method="post">
     <label for="word">Write one or more words to generate the password: </label>
     <input type="text" id="word" name="word" placeholder="Some words..."><br>
     <input type="submit" value="Generate">
 </form>
 <br>
-<p>The generated password is <kbd>${password}</kbd></p>
+<br>
+<kbd><a href="/">Return to the main page</a></kbd>
 <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
 </body>
 

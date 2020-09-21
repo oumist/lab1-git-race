@@ -35,11 +35,10 @@ public class PasswordControllerUnitTest {
 
     @Test
     public void testPasswordEmpty() throws Exception {
-        HashMap<String, String> map = new HashMap<>();
+        HashMap<String, Object> map = new HashMap<>();
         String view = controller.passGen("", map);
         assertThat(view, is("pass"));
-        assertThat(map.containsKey("password"), is(true));
-        assertThat(map.get("password"), is(error));
+        assertThat(map.containsKey("password"), is(false));
     }
 
     /**
@@ -48,11 +47,11 @@ public class PasswordControllerUnitTest {
 
     @Test
     public void testPasswordCorrect() throws Exception {
-        HashMap<String, String> map = new HashMap<>();
+        HashMap<String, Object> map = new HashMap<>();
         String view = controller.passGen("prove", map);
-        assertThat(view, is("pass"));
+        assertThat(view, is("showpass"));
         assertThat(map.containsKey("password"), is(true));
-        String aux = map.get("password");
+        String aux = (String)map.get("password");
         assert aux.length() > 0;
     }
 
@@ -62,11 +61,11 @@ public class PasswordControllerUnitTest {
 
      @Test
      public void testPasswordStrange() throws Exception {
-         HashMap<String, String> map = new HashMap<>();
+         HashMap<String, Object> map = new HashMap<>();
          String view = controller.passGen("キターȓ̷͓͉͈̺̿e̷͖̔̂̀̚", map);
-         assertThat(view, is("pass"));
+         assertThat(view, is("showpass"));
          assertThat(map.containsKey("password"), is(true));
-         String aux = map.get("password");
+         String aux = (String)map.get("password");
          assert aux.length() > 0;
      }
 
