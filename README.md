@@ -12,6 +12,8 @@ Some ideas for obtaining a :gift: if you are the first that:
 - **Cloud Atlas III**: deploy to AWS
 - **Home alone II**: create an even more impresive and well documented new feature
 - **Home alone III**: create an incredible and really weel documented new feature
+- **Spring II**: use WebClient for sync request
+- **Spring III**: use WebClient for async request
 
 Awarded pull requests:
 
@@ -19,7 +21,7 @@ Awarded pull requests:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Cloud Atlas I**: deploy to Heroku](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/7) :gift:
-
+- [**Spring I**: use RestTemplate for sync requests](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/13) :gift: 
 
 User name | NIA | Travis-CI|Score
 ----------|-----|----------|-----
@@ -33,5 +35,6 @@ User name | NIA | Travis-CI|Score
 [Victor Jarreta](https://github.com/VJarreta/lab1-git-race) | 738737 | [![Build Status](https://travis-ci.com/VJarreta/lab1-git-race.svg)](https://travis-ci.com/VJarreta/lab1-git-race) | :gift:
 [Marcos Nuez Martinez](https://github.com/Markles01/lab1-git-race) | 761319 | [![Build Status](https://travis-ci.com/Markles01/lab1-git-race.svg)](https://travis-ci.com/Markles01/lab1-git-race)
 [Jorge Turbica](https://github.com/turbica/lab1-git-race) | 723883 | [![Build Status](https://travis-ci.com/turbica/lab1-git-race.svg)](https://travis-ci.com/turbica/lab1-git-race)
-[Daniel González](https://github.com/Uncastellum/lab1-git-race) |758803 | [![Build Status](https://travis-ci.com/Uncastellum/lab1-git-race.svg)](https://travis-ci.com/Uncastellum/lab1-git-race)
+[Victor Martinez Lascorz](https://github.com/viriannn/lab1-git-race)| 738845 | [![Build Status](https://travis-ci.com/viriannn/lab1-git-race.svg)](https://travis-ci.com/viriannn/lab1-git-race)
+[Daniel González](https://github.com/Uncastellum/lab1-git-race) |758803 | [![Build Status](https://travis-ci.com/Uncastellum/lab1-git-race.svg)](https://travis-ci.com/Uncastellum/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status
