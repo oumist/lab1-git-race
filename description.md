@@ -102,7 +102,7 @@ Dicha documentación se puede consultar en el siguiente link: https://deployp1iw
 
 ## How to deploy the code in a server (using AWS)
 
-Web's deployment using AWS Elastic Beanstalk and CodeCommit
+Web's deployment using AWS Elastic Beanstalk, CodeCommit, CodeBuild and CodePipeline.
 
 ### PREREQUISITES:
 
@@ -122,7 +122,7 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html 
 3. Login to our AWS account and access the Identity and Access Management (**IAM**) console: https://console.aws.amazon.com/iam/home#/home
 4. Select the **Users** tab on the left and then **Add user(s)**
 5. Give the new user any name and select (AT LEAST) **programmatic access** in the access options.
-6. In the permissions tab, assign the policies **AWSCodeCommitFullAccess** and **AWSElasticBeanstalkFullAccess** to the user (or include the user in a group with such policies assigned to it).
+6. In the permissions tab, assign the policies **AWSCodeCommitFullAccess**, **AWSElasticBeanstalkFullAccess**, **AWSCodeBuildAdminAccess** and **AWSCodePipeline_FullAccess** to the user (or include the user in a group with such policies assigned to it).
 7. We will not be adding tags at the moment, so we can skip to the end of the creation process.
 8. When the site tells us the creation was correct, it will show us the name of the user along with its **ID access and secret keys**. We must keep them for later.
 9. Click the **Close** button on the lower part of the site to go back to the IAM console, and then click on the user which was just created.
@@ -145,7 +145,24 @@ https://eu-west-3.console.aws.amazon.com/elasticbeanstalk/home?region=eu-west-3#
 23. Select the environment we just created and go to **Settings** on the left part of the site
 24. Edit the **Software** section in the settings and add the environment variable **SERVER_PORT** and set it to the value **5000**.
 This is so the environment knows which port the server is using (currently 5000).
-25. Go back to the environment overview (click the name of the environment on the left navigation bar) and wait until the status is showing a **big green tick**. Then, you can get the URL right below the name.
+### Build Automatization
+25. Go to the CodeCommit console and to the repository we just created. https://eu-west-3.console.aws.amazon.com/codesuite/codecommit/repositories?region=eu-west-3
+26. Navigate to **CodeBuild** and create a new compilation process.
+27. Fill in the data: 
+	- Give it a name.
+	- Select `AWS CodeCommit` as the provider, and then select our repository and the branch we are commiting to.
+	- Choose any option for the environment (in my case, `administrated image` and `Amazon Linux 2`)
+	- Make sure the default option (compilation specification file) is chosen. This will use the `buildspec.yaml` file that indicates CodeBuild **how to build the code and what are the outputs**.
+	- On the Artifacts part, we must add an Amazon S3, and the name of an elasticbeanstalk bucket should appear. We choose that one and proceed to set the name empty (it will be filled automatically) and set the route to `build/libs` (which is the file gradle builds).
+	And most importantly, we must select **Zip** as the packaging, so Elastic Beanstalk can read it afterwards.
+	- We can skip to the last part and create the project.
+28. Once we have that done, we navigate to the **Compilation details** part and click on the **Service Role**. We select the policy `CodeBuildBasePolicy-Gradle_compilation-eu-west-3` and edit it:
+	- On S3, we select **All resources** on the resources menu.
+	- On CloudWatch Logs, we do the same.
+	- Uncheck the "Set as predetermined" option
+	- Save the changes
+29. Now navigate to **CodePipeline** and create a new pipeline. Give it a name and configure the source to be our AWS CodeCommit repository and branch. (using Amazon CloudWatch Events so it triggers a deployment everytime we make any changes). The compilation phase should be set to our AWS CodeBuild project and finally, we can set the implementation phase to our AWS Elastic Beanstalk to our EB application and environment.
+30. Go back to the environment overview in Elastic Beanstalk (click the name of the environment on the left navigation bar) and wait until the status is showing a **big green tick**. Then, you can get the URL right below the name.
 
 After all these steps, the app should be up and running.
 
@@ -153,7 +170,7 @@ In my case, the URL is:
 http://lab1-git-race-app-env.eu-west-3.elasticbeanstalk.com
 
 
-If any modification is made to the repository, we must use the command `git push` to push the changes to the CodeCommit branch and then use `eb deploy` to restart the Elastic Beanstalk environment with the update.
+If any modification is made to the repository, we must use the command `git push` to push the changes to the CodeCommit branch (if that doesn't work, we can use `eb deploy` to restart the Elastic Beanstalk environment with the update or manually upload the `.war` file on the path `build/libs` in the environment console).
 
 ### NOTE:
 - If any of the `eb` commands is not working, it is possible to use the command `python <python-scripts-folder>/eb-script.py` (replacing `<python-scripts-folder>` with the location where the python scripts are installed in your machine).
