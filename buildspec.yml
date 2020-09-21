@@ -1,0 +1,7 @@
+version: 0.1
+
+artifacts:
+  files:
+    - '**/*.war'
+  discard-paths: yes
+  base-directory: 'build/libs'
