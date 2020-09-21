@@ -56,7 +56,7 @@ In order to build and execute the project you have to do:
 
 ## How to deploy the code in a server
 
-Web's deployment using Heroku and GitHub:
+### Web's deployment using Heroku and GitHub:
 
 - Install Git Bash and Heroku CLI locally
 - Log in Git and Heroku
@@ -72,6 +72,14 @@ These guides have been followed to deploy the web: <https://devcenter.heroku.com
 This web has been documented using Swagger, which allows you to describe the generated API (Controllers) and its functions. The next guide has been followed to document the web: <https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api>
 A new class has been added to the application, SpringSwaggerConf.java, which defines Swagger's configuration. The class HelloController.java has been modified, adding the API's description and its only function's description (welcome).
 Swagger documentation: <https://deployp1iw.herokuapp.com/swagger-ui/#/>
+
+### Web's deployment using Google Cloud Engine
+
+- Log in [Google Cloud](https://cloud.google.com/) with Educational user accout (@unizar.es)
+- Set up your project's billing settings (**be carefull!**)
+- Follow the steps below [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app?hl=es#cloud-shell_1)
+
+Web deployed at Google Cloud: [IngWeb page](http://34.89.40.206/)
 
 ## How to deploy with Docker  
 ```
