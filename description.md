@@ -116,7 +116,7 @@ Windows Guide: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-in
 ### STEPS:
 #### Account Setup
 1. Having installed all the prerequisites, install the **AWS EB CLI**, using the **pip** command (Windows and Linux) or the **brew** command (MacOS)
-2. Make sure the python scripts folder is in the PATH variable, as explained in the following tutorial:
+2. Make sure the python scripts folder is in the **PATH user environment variable**, as explained in the following tutorial:
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html (Windows and Linux)
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html (MacOS).
 3. Login to our AWS account and access the Identity and Access Management (**IAM**) console: https://console.aws.amazon.com/iam/home#/home
