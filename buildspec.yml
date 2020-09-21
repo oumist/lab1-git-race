@@ -11,5 +11,5 @@ phases:
 
 artifacts:
   files:
-    - 'build/libs/lab1-git-race.war'
+    - 'build/libs/*.war'
   discard-paths: yes
