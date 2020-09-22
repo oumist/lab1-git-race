@@ -18,6 +18,7 @@ Awarded pull requests:
 - [**Home alone II**: create an even more impresive and well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/17) :gift:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
+- [**Home improvement II**: migrate from JSP to Thymeleaf (MVC server side)](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/12) :gift:
 - [**Cloud Atlas I**: deploy to Heroku](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/7) :gift:
 - [**Cloud Atlas II**: deploy to Google Cloud](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/15) :gift:
 - [**Cloud Atlas III**: deploy to AWS](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/16) :gift:
@@ -40,5 +41,6 @@ User name | NIA | Travis-CI|Score
 [Luis Garcia Garces](https://github.com/luisgg98) | 739202 | [![Build Status](https://travis-ci.com/luisgg98/lab1-git-race.svg)](https://travis-ci.com/luisgg98/lab1-git-race)
 [Álvaro García Díaz](https://github.com/Alvarogd6/lab1-git-race) | 760704 | [![Build Status](https://travis-ci.com/Alvarogd6/lab1-git-race.svg)](https://travis-ci.com/Alvarogd6/lab1-git-race) | :gift:
 [Alberto Calvo Rubió](https://github.com/AlbertoCalvoRubio) | 760739 | [![Build Status](https://travis-ci.com/AlbertoCalvoRubio/lab1-git-race.svg?branch=master)](https://travis-ci.com/AlbertoCalvoRubio/lab1-git-race) | :gift:
-[Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/andrewknoll/lab1-git-race)
+[Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/andrewknoll/lab1-git-race) | :gift:
+[Saúl Flores Benavente](https://github.com/saul205/lab1-git-race) | 755769 | [![Build Status](https://travis-ci.org/saul205/lab1-git-race.svg)](https://travis-ci.org/saul205/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status

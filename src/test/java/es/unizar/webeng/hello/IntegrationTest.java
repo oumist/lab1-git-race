@@ -1,3 +1,4 @@
+
 package es.unizar.webeng.hello;
 
 /**
@@ -30,23 +31,25 @@ public class IntegrationTest {
 
     /**
      * Performs integration test for main webpage
-     *
+     * <p>
+     * This function checks that the request gives an OK response and
+     *  if the response is correct(Contains the "<title>Hello" that is part of the template)
      */
-
     @Test
     public void testHome() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
                 "http://localhost:" + this.port, String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         assertTrue("Wrong body (title doesn't match):\n" + entity.getBody(), entity
-                .getBody().contains("<title>Roll"));
+                .getBody().contains("<title>Hello"));
     }
 
     /**
      * Performs integration test for CSS
-     *
+     * <p>
+     * This function checks that the response status is Ok and
+     *  there is a body whose media type equals "text/css"
      */
-
     @Test
     public void testCss() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
