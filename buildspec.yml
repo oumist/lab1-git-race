@@ -1,0 +1,15 @@
+version: 0.1
+
+phases:
+  build:
+    commands:
+       - echo Build started on `date`
+       - ./gradlew build
+  post_build:
+    commands:
+       - echo Build completed on `date`
+       - mv build/libs/*.war ROOT.war
+artifacts:
+  files:
+    - 'ROOT.war'
+  discard-paths: yes
