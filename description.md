@@ -79,7 +79,7 @@ Swagger documentation: <https://deployp1iw.herokuapp.com/swagger-ui/#/>
 
 ### Web's deployment using Google Cloud Engine
 
-- Log in [Google Cloud](https://cloud.google.com/) with Educational user accout (@unizar.es)
+- Log in [Google Cloud](https://cloud.google.com/) with Educational user account (@unizar.es)
 - Set up your project's billing settings (**be carefull!**)
 - Follow the steps below [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app?hl=es#cloud-shell_1)
 
