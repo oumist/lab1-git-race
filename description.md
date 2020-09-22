@@ -4,9 +4,11 @@
 
 Simple Spring web application which can perform several actions:
 
-* Get current date & welcome message
+* Get current date, user & welcome message
   * The actual date (*Thu Sep 17 16:26:04 CEST 2020*, for example)
-  * A welcome (*Hola alumno*)
+  * The user (@\<user>)
+  * A welcome message, "Hola alumno", that can be customized to "Hola \<user>"
+  * The user is "alumno" by default and changes using the /\<name> path, being \<name> any username
 * Add two integer numbers
 * Show a link to a youtube video
 * Show current browser and version
@@ -104,6 +106,7 @@ docker run -i -p 8080:8080 ingweb/git-race
 * HTML/CSS ~ View side
 * Tomcat ~ Server side
 * Java ~ Controller engine
+* Thymeleaf ~ Server-side java template
 
 This project's code is documented following Javadoc standards.
 
