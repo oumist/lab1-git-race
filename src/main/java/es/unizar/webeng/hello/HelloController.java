@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Date;
 import java.util.Map;
 import java.util.Random;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 
 import io.swagger.annotations.Api;
@@ -80,6 +82,17 @@ public class HelloController {
         model.put("link", link);
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         model.put("dice", dice);
+        model.put("java", System.getProperty("java.version"));
+
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            model.put("host", ip.getHostName());
+            model.put("ip", ip.getHostAddress());
+        } catch (UnknownHostException e) {
+            model.put("host", "Cannot get the host name");
+            model.put("ip", "Cannot get the host address or IP");
+        }
+        
         return "wellcome";
     }
 }
