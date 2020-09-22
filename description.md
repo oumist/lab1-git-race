@@ -116,3 +116,41 @@ file.
 
 Access to the path /rings-quote to use this feature.
 Remember to set the api key first to use it.  
+
+## Docker usage
+
+This application contains a [Docker](https://www.docker.com/) file, which can compile a and run the service.
+In order to compile the code with Docker, run the following command:
+
+```bash
+docker build -t *image_name*
+```
+
+The above command creates a docker image of the App.
+Next, to start the service, run Docker using the following command:
+
+```bash
+docker run -d -p 8080:8080 -t *image_name*
+```
+
+Type
+
+```bash
+docker container ls
+```
+
+to check if the service is running.
+
+Now, if you put (<http://localhost:8080/>) in the browser, you can access to the web service.
+
+The information followed to make the *Dockerfile* can be found on the following links:
+  - (<https://bmuschko.com/blog/dockerized-spring-boot-app/>)
+  - (<https://codefresh.io/docs/docs/learn-by-example/java/gradle/>)
+
+## How to deploy in Google Cloud Kubernetes
+
+Using the Docker image, previously mentioned, you can deploy it into [Google Cloud Kubernetes](https://cloud.google.com/kubernetes-engine?hl=es) platform.
+Follow these steps to deploy Docker containter on Kuberentes:
+
+  - Create a [proyect on Google Cloud](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
+  - You can use [Google Cloud Console](https://console.cloud.google.com/) or work locally (need to install [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts)). 

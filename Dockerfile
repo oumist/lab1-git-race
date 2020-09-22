@@ -1,8 +1,10 @@
+# Step 1: compile
 FROM gradle:6.6.1-jdk11 AS build
 COPY --chown=gradle:gradle . /usr/src/git-race
 WORKDIR /usr/src/git-race
 RUN gradle build --no-daemon 
 
+#Step 2: Run service
 FROM openjdk:11-jre-slim
 EXPOSE 8080
 RUN mkdir /app
