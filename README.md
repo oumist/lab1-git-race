@@ -6,21 +6,24 @@ Some ideas for obtaining a :gift: if you are the first that:
 
 - **Back to the Future II**: migrate from Java 8 or Java 11 to Scala 2.13
 - **Back to the Future III**: migrate from Java or Scala to Kotlin 1.4
-- **Home improvement II**: migrate from JSP to Thymeleaf (MVC server side)
 - **Home improvement III**: migrate from JSP or Thymeleaf to any JS framework and a Restful web service (no MVC server side)
-- **Cloud Atlas II**: deploy to Google Cloud
-- **Cloud Atlas III**: deploy to AWS
-- **Home alone II**: create an even more impresive and well documented new feature
 - **Home alone III**: create an incredible and really weel documented new feature
 - **Spring II**: use WebClient for sync request
 - **Spring III**: use WebClient for async request
+- **The Fixer I**: fix a substantial part of the project that gets broken or obsolete after a merge.
+- **The Fixer II**: fix a substantial part of the project that gets broken or obsolete after a merge, again!
+- **The Fixer III**: fix a substantial part of the project that gets broken or obsolete after a merge, because fixing is a never-ending activity.
 
 Awarded pull requests:
 
 - [**Home alone I**: create an impresive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2) :gift:
+- [**Home alone II**: create an even more impresive and well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/17) :gift:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
+- [**Home improvement II**: migrate from JSP to Thymeleaf (MVC server side)](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/12) :gift:
 - [**Cloud Atlas I**: deploy to Heroku](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/7) :gift:
+- [**Cloud Atlas II**: deploy to Google Cloud](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/15) :gift:
+- [**Cloud Atlas III**: deploy to AWS](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/16) :gift:
 - [**Spring I**: use RestTemplate for sync requests](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/13) :gift:
 
 User name | NIA | Travis-CI|Score
@@ -38,5 +41,9 @@ User name | NIA | Travis-CI|Score
 [Victor Martinez Lascorz](https://github.com/viriannn/lab1-git-race)| 738845 | [![Build Status](https://travis-ci.com/viriannn/lab1-git-race.svg)](https://travis-ci.com/viriannn/lab1-git-race)
 [Daniel González](https://github.com/Uncastellum/lab1-git-race) |758803 | [![Build Status](https://travis-ci.com/Uncastellum/lab1-git-race.svg)](https://travis-ci.com/Uncastellum/lab1-git-race) | :gift:
 [Luis Garcia Garces](https://github.com/luisgg98) | 739202 | [![Build Status](https://travis-ci.com/luisgg98/lab1-git-race.svg)](https://travis-ci.com/luisgg98/lab1-git-race)
+[Álvaro García Díaz](https://github.com/Alvarogd6/lab1-git-race) | 760704 | [![Build Status](https://travis-ci.com/Alvarogd6/lab1-git-race.svg)](https://travis-ci.com/Alvarogd6/lab1-git-race) | :gift:
+[Alberto Calvo Rubió](https://github.com/AlbertoCalvoRubio) | 760739 | [![Build Status](https://travis-ci.com/AlbertoCalvoRubio/lab1-git-race.svg?branch=master)](https://travis-ci.com/AlbertoCalvoRubio/lab1-git-race) | :gift:
+[Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/andrewknoll/lab1-git-race) | :gift:
+[Saúl Flores Benavente](https://github.com/saul205/lab1-git-race) | 755769 | [![Build Status](https://travis-ci.org/saul205/lab1-git-race.svg)](https://travis-ci.org/saul205/lab1-git-race) | :gift:
 [Juan José Tambo](https://github.com/turbica/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race)
 your name | your nia | your Travis-ci status

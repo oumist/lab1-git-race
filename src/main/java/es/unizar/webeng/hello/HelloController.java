@@ -2,12 +2,15 @@ package es.unizar.webeng.hello;
 import es.unizar.webeng.hello.GetRequest;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Date;
 import java.util.Map;
 import java.util.Random;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 
 import io.swagger.annotations.Api;
@@ -15,7 +18,9 @@ import io.swagger.annotations.ApiOperation;
 
 
 /**
- * The HelloControler program implements an application that
+ * The HelloControler class contains the handler functions for the different requests.
+ * <p>
+ * The program implements an application that
  * simply displays current time and a static welcome message
  * when requested.
  *
@@ -29,6 +34,26 @@ public class HelloController {
     @Value("${app.joke_const:Hello World}")
     private String joke_const;
     private String link = "Abre este enlace";
+
+    private String luckyColor(){
+        
+        /* Current day in integer form */
+        Integer num = Integer.parseInt(currentDay); 
+
+        if(num % 5 == 0 ){
+            return "black";
+        }
+        
+        if(num % 2 == 0){
+            return "blue";
+        }
+        
+        if(num % 3 == 0) {
+            return "white";
+        }
+            
+        return "red";
+    }
 
     /* Current day in string form */
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -65,6 +90,7 @@ public class HelloController {
         // Dice result is calculated between 1 and 6 and storeged in dice
         int dice = random.nextInt(6) + 1;
 
+        model.put("luckyColor", luckyColor());
         model.put("time", new Date());
         model.put("message", message);
         model.put("joke_const", joke_const);
@@ -80,6 +106,37 @@ public class HelloController {
         model.put("link", link);
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         model.put("dice", dice);
+        model.put("java", System.getProperty("java.version"));
+
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            model.put("host", ip.getHostName());
+            model.put("ip", ip.getHostAddress());
+        } catch (UnknownHostException e) {
+            model.put("host", "Cannot get the host name");
+            model.put("ip", "Cannot get the host address or IP");
+        }
+        
+        return "wellcome";
+    }
+
+    /**
+     * Handler for GET requests to "/{name}" path, where "name" can be any string.
+     * <p>
+     * The "name" parameter is taken directly from the path
+     * This function sets the time and message to be displayed on the web
+     * 
+     * @param model  The MVC model
+     * @param name  String that contains the name used to build the message
+     * @return the name of the template used
+     */
+    @GetMapping("/{name}")
+    public String welcomeName(Map<String, Object> model, @PathVariable String name) {
+
+        model.put("luckyColor", luckyColor());
+        model.put("time", new Date());
+        model.put("message", "Hola " + name);
+
         return "wellcome";
     }
 }
