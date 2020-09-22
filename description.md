@@ -34,6 +34,7 @@ Simple Spring web application which can perform several actions:
 * [How to access the password generator](#how-to-access-the-password-generator)
 * [How works the password generator](#how-works-the-password-generator)
 * [How to modify the password generated](#how-to-modify-the-password-generated)
+* [How to deploy with Google Cloud Kubernetes](#how-to-deploy-with-Google-Cloud-Kubernetes)
 
 ## How to build the code
 
@@ -278,40 +279,23 @@ Below the stadistics, you can modify the password specifying how many characters
 
 When a negative number is input, it is ignored.
 
-## Docker usage
+## How to deploy with Google Cloud Kubernetes
 
-This application contains a [Docker](https://www.docker.com/) file, which can compile a and run the service.
-In order to compile the code with Docker, run the following command:
-
-```bash
-docker build -t *image_name*
-```
-
-The above command creates a docker image of the App.
-Next, to start the service, run Docker using the following command:
-
-```bash
-docker run -d -p 8080:8080 -t *image_name*
-```
-
-Type
-
-```bash
-docker container ls
-```
-
-to check if the service is running.
-
-Now, if you put (<http://localhost:8080/>) in the browser, you can access to the web service.
-
-The information followed to make the *Dockerfile* can be found on the following links:
-  - (<https://bmuschko.com/blog/dockerized-spring-boot-app/>)
-  - (<https://codefresh.io/docs/docs/learn-by-example/java/gradle/>)
-
-## How to deploy in Google Cloud Kubernetes
-
-Using the Docker image, previously mentioned, you can deploy it into [Google Cloud Kubernetes](https://cloud.google.com/kubernetes-engine?hl=es) platform.
+Using a Docker image, you can deploy the App into [Google Cloud Kubernetes](https://cloud.google.com/kubernetes-engine?hl=es) platform.
 Follow these steps to deploy Docker containter on Kuberentes:
 
-  - Create a [proyect on Google Cloud](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
-  - You can use [Google Cloud Console](https://console.cloud.google.com/) or work locally (need to install [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts)). 
+  - Create a [proyect on Google Cloud](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+  - You can use [Google Cloud Console](https://console.cloud.google.com/) or work locally (need to install [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts))
+  - Install [Kubernetes command line](https://kubernetes.io/)
+  - Compile and name the Docker image
+  - Configure Docker command line tool to authenticate in [Container Registry](https://cloud.google.com/container-registry)
+  - Push the Docker image to Container Registry
+  - Create a GKE cluster selecting the proyect id and [compute zone](https://cloud.google.com/container-registry)
+  - Create a Kubernetes implementation for the Docker image (with flag num-nodes=1)
+  - Set 3 replicas
+  - Create *HorizontalPodAutoscaler* resource for implementation
+  - Generate Kubernetes service for the App implementation
+
+Tutorial source: <https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app#cloud-shell_2>
+
+Kubernetes service: [git-race](http://35.246.172.204)
