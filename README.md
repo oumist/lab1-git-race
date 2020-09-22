@@ -18,10 +18,12 @@ Some ideas for obtaining a :gift: if you are the first that:
 Awarded pull requests:
 
 - [**Home alone I**: create an impresive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2) :gift:
+- [**Home alone II**: create an even more impresive and well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/17) :gift:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Cloud Atlas I**: deploy to Heroku](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/7) :gift:
 - [**Spring I**: use RestTemplate for sync requests](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/13) :gift:
+
 
 User name | NIA | Travis-CI|Score
 ----------|-----|----------|-----
@@ -38,5 +40,5 @@ User name | NIA | Travis-CI|Score
 [Victor Martinez Lascorz](https://github.com/viriannn/lab1-git-race)| 738845 | [![Build Status](https://travis-ci.com/viriannn/lab1-git-race.svg)](https://travis-ci.com/viriannn/lab1-git-race)
 [Daniel González](https://github.com/Uncastellum/lab1-git-race) |758803 | [![Build Status](https://travis-ci.com/Uncastellum/lab1-git-race.svg)](https://travis-ci.com/Uncastellum/lab1-git-race) | :gift:
 [Luis Garcia Garces](https://github.com/luisgg98) | 739202 | [![Build Status](https://travis-ci.com/luisgg98/lab1-git-race.svg)](https://travis-ci.com/luisgg98/lab1-git-race)
-[Álvaro García Díaz](https://github.com/Alvarogd6/lab1-git-race) | 760704 | [![Build Status](https://travis-ci.com/Alvarogd6/lab1-git-race.svg)](https://travis-ci.com/Alvarogd6/lab1-git-race)
+[Álvaro García Díaz](https://github.com/Alvarogd6/lab1-git-race) | 760704 | [![Build Status](https://travis-ci.com/Alvarogd6/lab1-git-race.svg)](https://travis-ci.com/Alvarogd6/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status
