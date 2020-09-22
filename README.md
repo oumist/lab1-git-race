@@ -45,5 +45,5 @@ User name | NIA | Travis-CI|Score
 [Alberto Calvo Rubió](https://github.com/AlbertoCalvoRubio) | 760739 | [![Build Status](https://travis-ci.com/AlbertoCalvoRubio/lab1-git-race.svg?branch=master)](https://travis-ci.com/AlbertoCalvoRubio/lab1-git-race) | :gift:
 [Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/andrewknoll/lab1-git-race) | :gift:
 [Saúl Flores Benavente](https://github.com/saul205/lab1-git-race) | 755769 | [![Build Status](https://travis-ci.org/saul205/lab1-git-race.svg)](https://travis-ci.org/saul205/lab1-git-race) | :gift:
-[Juan José Tambo](https://github.com/turbica/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race)
+[Juan José Tambo](https://github.com/jtambo99/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race)
 your name | your nia | your Travis-ci status
