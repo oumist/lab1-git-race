@@ -6,11 +6,13 @@ Some ideas for obtaining a :gift: if you are the first that:
 
 - **Back to the Future II**: migrate from Java 8 or Java 11 to Scala 2.13
 - **Back to the Future III**: migrate from Java or Scala to Kotlin 1.4
-- **Home improvement II**: migrate from JSP to Thymeleaf (MVC server side)
 - **Home improvement III**: migrate from JSP or Thymeleaf to any JS framework and a Restful web service (no MVC server side)
 - **Home alone III**: create an incredible and really weel documented new feature
 - **Spring II**: use WebClient for sync request
 - **Spring III**: use WebClient for async request
+- **The Fixer I**: fix a substantial part of the project that gets broken or obsolete after a merge.
+- **The Fixer II**: fix a substantial part of the project that gets broken or obsolete after a merge, again!
+- **The Fixer III**: fix a substantial part of the project that gets broken or obsolete after a merge, because fixing is a never-ending activity.
 
 Awarded pull requests:
 
