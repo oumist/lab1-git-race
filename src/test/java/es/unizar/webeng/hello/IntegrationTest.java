@@ -1,4 +1,10 @@
+
 package es.unizar.webeng.hello;
+
+/**
+ * Performs integration test for webpage
+ *
+ */
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +29,12 @@ public class IntegrationTest {
     @LocalServerPort
     private int port = 0;
 
+    /**
+     * Performs integration test for main webpage
+     * <p>
+     * This function checks that the request gives an OK response and
+     *  if the response is correct(Contains the "<title>Hello" that is part of the template)
+     */
     @Test
     public void testHome() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
@@ -32,6 +44,12 @@ public class IntegrationTest {
                 .getBody().contains("<title>Hello"));
     }
 
+    /**
+     * Performs integration test for CSS
+     * <p>
+     * This function checks that the response status is Ok and
+     *  there is a body whose media type equals "text/css"
+     */
     @Test
     public void testCss() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
