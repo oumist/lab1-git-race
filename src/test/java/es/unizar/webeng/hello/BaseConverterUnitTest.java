@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
+import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,63 +22,98 @@ import java.util.Map;
  *  Convert a no octal value to another base            |   expected: Error
  *  Convert a hexadecimal number to another base        |   expected: Number in target base
  */
-@RunWith(Parameterized.class)
+@RunWith(SpringRunner.class)
 @WebMvcTest(BaseConverterController.class)
 public class BaseConverterUnitTest {
 
-    private enum Result{
+    @Autowired
+    private BaseConverterController controller;
+
+    @Value("${app.messageError:Error}")
+    private String messageError;
+
+    enum Result {
         OK,NOK
     }
 
-    @Parameterized.Parameters
-    public static Iterable<Object[]> data() {
-        return Arrays.asList(
-                new Object[] {"hex", "","dec", "", Result.NOK},
-                new Object[] {"dec", "z","oct", "", Result.NOK},
-                new Object[] {"oct", "z","bin", "", Result.NOK},
-                new Object[] {"bin", "z","hex", "", Result.NOK},
-
-                new Object[] {"hex", "A1", "dec", "161", Result.OK},
-                new Object[] {"hex", "A1", "oct", "241", Result.OK},
-                new Object[] {"hex", "A1", "bin", "10100001", Result.OK},
-                new Object[] {"dec", "17", "oct", "21", Result.OK},
-                new Object[] {"dec", "17", "bin", "10001", Result.OK},
-                new Object[] {"dec", "17", "hex", "11", Result.OK},
-                new Object[] {"oct", "11", "dec", "9", Result.OK},
-                new Object[] {"oct", "11", "bin", "1001", Result.OK},
-                new Object[] {"oct", "11", "hex", "9", Result.OK},
-                new Object[] {"bin", "10", "dec", "2", Result.OK},
-                new Object[] {"bin", "10", "oct", "2", Result.OK},
-                new Object[] {"bin", "10", "hex", "2", Result.OK});
+    @Test
+    public void illegalStringHexToDecTest(){
+        defaultTest("hex", "","dec", "", Result.NOK);;
+    }
+    @Test
+    public void illegalStringDecToOctTest(){
+        defaultTest("dec", "z","oct", "", Result.NOK);;
+    }
+    @Test
+    public void illegalStringOctToBinTest(){
+        defaultTest("oct", "z","bin", "", Result.NOK);
+    }
+    @Test
+    public void illegalStringBinToHexTest(){
+        defaultTest("bin", "z","hex", "", Result.NOK);
+    }
+    @Test
+    public void HexToDecTest(){
+        defaultTest("hex", "A1", "dec", "161", Result.OK);;
+    }
+    @Test
+    public void hexToOctTest(){
+        defaultTest("hex", "A1", "oct", "241", Result.OK);;
+    }
+    @Test
+    public void hexToBinTest(){
+        defaultTest("hex", "A1", "bin", "10100001", Result.OK);
+    }
+    @Test
+    public void decToOctTest(){
+        defaultTest("dec", "17", "oct", "21", Result.OK);
+    }
+    @Test
+    public void decToBinTest(){
+        defaultTest("dec", "17", "bin", "10001", Result.OK);
+    }
+    @Test
+    public void decToHexTest(){
+        defaultTest( "dec", "17", "hex", "11", Result.OK);
+    }
+    @Test
+    public void octToDecTest(){
+        defaultTest("oct", "11", "dec", "9", Result.OK);
+    }
+    @Test
+    public void octToBinTest(){
+        defaultTest("oct", "11", "bin", "1001", Result.OK);;
+    }
+    @Test
+    public void octToHexTest(){
+        defaultTest("oct", "11", "hex", "9", Result.OK);;
+    }
+    @Test
+    public void binToDecTest(){
+        defaultTest("bin", "10", "dec", "2", Result.OK);;
+    }
+    @Test
+    public void binToOctTest(){
+        defaultTest("bin", "10", "oct", "2", Result.OK);;
+    }
+    @Test
+    public void binToHexTest(){
+        defaultTest("bin", "10", "hex", "2", Result.OK);;
     }
 
-    @Parameterized.Parameter(0)
-    public String originalBase;
-    @Parameterized.Parameter(1)
-    public String originalNumber;
-    @Parameterized.Parameter(2)
-    public String targetBase;
-    @Parameterized.Parameter(3)
-    public String resultNumber;
-    @Parameterized.Parameter(4)
-    public Result result;
-
-    @Test
-    public void createNoteTest() {
+    public void defaultTest(String originalBase, String originalNumber, String targetBase, String resultNumber, Result result) {
         Map<String,Object> model = new HashMap<>();
-        String message = "Error";
+        String message = messageError;
         String values = null;
-        BaseConverterController c = new BaseConverterController();
-
-        String retval = c.converter(originalBase,targetBase,originalNumber, model);
+        controller.converter(originalBase,targetBase,originalNumber, model);
 
         if(result == Result.OK) {
             message = null;
             values = originalNumber + " in base " + originalBase + " to  " + targetBase + " is " + resultNumber;
         }
 
-        Assert.assertEquals(values, (String)model.get("values"));
-        Assert.assertEquals(message, model.get("error_message"));
+        assertEquals(values, (String)model.get("values"));
+        assertEquals(message, model.get("error_message"));
 
     }
 }

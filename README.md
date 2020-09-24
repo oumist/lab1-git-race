@@ -7,17 +7,16 @@ Some ideas for obtaining a :gift: if you are the first that:
 - **Back to the Future II**: migrate from Java 8 or Java 11 to Scala 2.13
 - **Back to the Future III**: migrate from Java or Scala to Kotlin 1.4
 - **Home improvement III**: migrate from JSP or Thymeleaf to any JS framework and a Restful web service (no MVC server side)
-- **Home alone III**: create an incredible and really weel documented new feature
+- **Home alone III**: create an incredible and really well documented new feature
 - **Spring II**: use WebClient for sync request
 - **Spring III**: use WebClient for async request
-- **The Fixer I**: fix a substantial part of the project that gets broken or obsolete after a merge.
 - **The Fixer II**: fix a substantial part of the project that gets broken or obsolete after a merge, again!
 - **The Fixer III**: fix a substantial part of the project that gets broken or obsolete after a merge, because fixing is a never-ending activity.
 
 Awarded pull requests:
 
-- [**Home alone I**: create an impresive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2) :gift:
-- [**Home alone II**: create an even more impresive and well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/17) :gift:
+- [**Home alone I**: create an impressive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2) :gift:
+- [**Home alone II**: create an even more impressive and well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/17) :gift:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement II**: migrate from JSP to Thymeleaf (MVC server side)](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/12) :gift:
@@ -25,6 +24,7 @@ Awarded pull requests:
 - [**Cloud Atlas II**: deploy to Google Cloud](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/15) :gift:
 - [**Cloud Atlas III**: deploy to AWS](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/16) :gift:
 - [**Spring I**: use RestTemplate for sync requests](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/13) :gift:
+- [**The Fixer I**: fix a substantial part of the project that gets broken or obsolete after a merge.](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/19) :gift:
 
 User name | NIA | Travis-CI|Score
 ----------|-----|----------|-----
@@ -46,4 +46,5 @@ User name | NIA | Travis-CI|Score
 [Andrés Otero García](https://github.com/andrewknoll/lab1-git-race) | 757755 | [![Build Status](https://travis-ci.com/andrewknoll/lab1-git-race.svg)](https://travis-ci.com/andrewknoll/lab1-git-race) | :gift:
 [Saúl Flores Benavente](https://github.com/saul205/lab1-git-race) | 755769 | [![Build Status](https://travis-ci.org/saul205/lab1-git-race.svg)](https://travis-ci.org/saul205/lab1-git-race) | :gift:
 [Martín Gascón Laste](https://github.com/764429/lab1-git-race)  |   764429  |   [![Build Status](https://travis-ci.org/764429/lab1-git-race.svg)](https://travis-ci.org/764429/lab1-git-race)
+[Irene Fumanal Lacoma](https://github.com/irefu/lab1-git-race)  | 758325 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/irefu/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status
