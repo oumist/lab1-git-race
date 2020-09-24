@@ -61,7 +61,7 @@ public class PasswordController {
      * @return JSP name
      */
 
-    @GetMapping("/password")
+    @GetMapping("/pass/password")
     public String passGen() {
         return "pass";
     }
@@ -75,7 +75,7 @@ public class PasswordController {
      * @return JSP name (pass if incorrect, otherwise showpass)
      */
 
-    @RequestMapping(value="/showpassword", method=RequestMethod.POST, 
+    @RequestMapping(value="/pass/showpassword", method=RequestMethod.POST,
             consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String passGen(@RequestParam("word") String enc, Map<String, Object> model) {
 
