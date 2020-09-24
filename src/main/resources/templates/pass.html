@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html xmlns:th="http://www.thymeleaf.org"></html>
 <html lang="en">
 <title>Password generator</title>
 <link rel="stylesheet" type="text/css"
@@ -8,7 +8,7 @@
 
 <h1>Password generator using AES encryption</h1>
 
-<form action="/showpassword" method="post">
+<form action="/pass/showpassword" method="post">
     <label for="word">Write one or more words to generate the password: </label>
     <input type="text" id="word" name="word" placeholder="Some words..."><br>
     <input type="submit" value="Generate">

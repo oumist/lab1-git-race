@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html xmlns:th="http://www.thymeleaf.org"></html>
 <html lang="en">
 <title>Password generator</title>
 <link rel="stylesheet" type="text/css"
@@ -8,16 +8,16 @@
 
 <h1>Password generator using AES encryption</h1>
 <br>
-<p>The generated password is <textarea id="copyPass" rows="1" readonly style="border: none; resize: none; width: 80%; height: 20px">${password}</textarea></p>
+<p>The generated password is <textarea id="copyPass" rows="1" readonly style="border: none; resize: none; width: 80%; height: 20px"><th:block th:text="${password}"></th:block></textarea></p>
 <button onclick="copy()">Copy password</button>
 <br>
 <p>This password contains: </p>
 <ul>
-    <li>${len} characters</li>
-    <li>${spe} special characters</li>
-    <li>${low} lowercase letters</li>
-    <li>${upp} uppercase letters</li>
-    <li>${num} numbers</li>
+    <li th:block th:text=" ${len + ' characters'}"> </li>
+    <li th:block th:text=" ${spe + ' special characters'}"></li>
+    <li th:block th:text=" ${low + ' lowercase letters'}"></li>
+    <li th:block th:text=" ${upp + ' uppercase letters'}"></li>
+    <li th:block th:text=" ${num + ' numbers'}"></li>
 </ul>
 <br>
 <p>Add more characters to your password: </p>
