@@ -34,6 +34,7 @@ Simple Spring web application which can perform several actions:
 * [How to access the password generator](#how-to-access-the-password-generator)
 * [How works the password generator](#how-works-the-password-generator)
 * [How to modify the password generated](#how-to-modify-the-password-generated)
+* [How to access the text word counter](#how-to-access-the-text-word-counter)
 
 ## How to build the code
 
@@ -277,3 +278,7 @@ Below the stadistics, you can modify the password specifying how many characters
 * random characters
 
 When a negative number is input, it is ignored.
+
+## How to access the text word counter
+
+The text word counter is found in the path /textCounter. You can find a link on the welcome page.
