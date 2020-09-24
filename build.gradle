@@ -39,7 +39,6 @@ stage.dependsOn(copyToLib)
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'javax.servlet:jstl'
 
     compile 'org.webjars:bootstrap:3.3.5'
     compile 'org.webjars:jquery:2.1.4'

@@ -14,10 +14,29 @@
       <link rel="stylesheet" type="text/css"
             th:href="@{webjars/bootstrap/3.3.5/css/bootstrap.min.css}"/>
       <body>
+            <h1>Links to specific controllers</h1>
+                  <div><a href="ultra-calculator">Ultra Calculator (CalculatorController#calculator(String, String))</a></div>
+                  <div><a href="pass/password">Show Password (PasswordController#passGen(String, Map))</a></div>
+                  <div><a href="rings-quote">Rings Quoted (RingsQuote#findLOTRquote(Map))</a> <i>Requires API key in properties</i></div>
+                  <div><a href="swagger-ui/index.html">Api Documentation (SpringSwaggerConf)</a></div>
+                  <div><a href="user-agent">Ultra Agent (UserAgentController#welcome(String, Map))</a></div>
+            <hr>
+            <h1>Sandbox</h1>
+            <h2><th:block th:text="${message + ' &#8594; ' + dice}"></th:block></h2>
             <kbd> <th:block th:text="${time}">time</th:block> @<th:block th:text="${name} ?: 'alumno'"></th:block>
-                  <span class="glyphicon glyphicon-console"></span> <th:block th:text="${message} ?: 'message'"></th:block>
-                  <br>Today's lucky colour is <th:block th:text="${luckyColor} ?: 'red'"></th:block>
-            </kbd>
+                  <span class="glyphicon glyphicon-console"></span> <th:block th:text="${message} ?: 'message'"> </th:block> </kbd>
+            <p>Your IP is <kbd th:text="${ip}"></kbd></p>
+            <p>Your Host is <kbd th:text="${host}"></kbd></p>
+            <p>The JAVA version used is <kbd th:text="${java}"> </kbd></p>
+            <br>
+            <kbd>Today's lucky colour is <th:block th:text="${luckyColor} ?: 'red'"></th:block></kbd><br/><br/>
+            <kbd th:block th:text=" ${joke_const}"></kbd><br/>
+            <kbd th:block th:text=" ${'+' + joke_plus }"></kbd><br/>
+            <kbd th:block th:text=" ${'-' + joke_minus}"></kbd><kbd></kbd><br/><br/>
+            <kbd th:block th:text=" ${extra_message}"></kbd>
+            <a href ="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><th:block th:text="${link}"></th:block></a>
+            <p><img src="images/Pilar.jpg"/></p>
+            <kbd><a href="/password" style="color: white">Access to the password generator</a></kbd>
             <script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
       </body>
 </html>
