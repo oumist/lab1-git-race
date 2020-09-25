@@ -48,4 +48,5 @@ User name | NIA | Travis-CI|Score
 [Martín Gascón Laste](https://github.com/764429/lab1-git-race)  |   764429  |   [![Build Status](https://travis-ci.org/764429/lab1-git-race.svg)](https://travis-ci.org/764429/lab1-git-race)
 [Irene Fumanal Lacoma](https://github.com/irefu/lab1-git-race)  | 758325 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/irefu/lab1-git-race) | :gift:
 [Jorge García Pueyo](https://github.com/jgarciapueyo/lab1-git-race) | 758807 | [![Build Status](https://travis-ci.com/jgarciapueyo/lab1-git-race.svg)](https://travis-ci.com/jgarciapueyo/lab1-git-race) | :gift:
+[David Alloza Tejero](https://github.com/david-AT/lab1-git-race)  | 761754 | [![Build Status](https://travis-ci.org/david-AT/lab1-git-race.svg?branch=master)](https://travis-ci.org/david-AT/lab1-git-race)
 your name | your nia | your Travis-ci status
