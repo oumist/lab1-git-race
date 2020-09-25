@@ -286,11 +286,11 @@ When a negative number is input, it is ignored.
 The movement area is restricted to the sides and the bottom by the limits of the page.
 The spaceship can't move upwards past a certain limit.
 
-*w - Move up
-*A - Move left
-*S - Move down
-*D - Move right
-*Space - Shoot
+* w - Move up
+* A - Move left
+* S - Move down
+* D - Move right
+* Space - Shoot
 
 Keep pressed the different keys to perform the action continuously.
 
