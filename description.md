@@ -15,6 +15,7 @@ Simple Spring web application which can perform several actions:
 * Show your IP, Hostname and the JAVA version used
 * Generate a safe password and modify it
 * Roll the dice to resolve disputes
+* ¡PLAY SPACE INVADERS!
 
 <!-- omit in toc -->
 ## Table of Contents
@@ -34,6 +35,7 @@ Simple Spring web application which can perform several actions:
 * [How to access the password generator](#how-to-access-the-password-generator)
 * [How works the password generator](#how-works-the-password-generator)
 * [How to modify the password generated](#how-to-modify-the-password-generated)
+* [How space invaders was implemented](#how-space-invaders-was-implemented)
 
 ## How to build the code
 
@@ -277,3 +279,25 @@ Below the stadistics, you can modify the password specifying how many characters
 * random characters
 
 When a negative number is input, it is ignored.
+
+## How space invaders was implemented
+
+This simpler web version of the space invaders was implemented on javascript using the html element canvas.
+The canvas allows to render images into the screen, so we can print the different sprites that the game needs.
+The sprites are implemented on a Sprite class that extends the Image class, and we need to set the source to be able to access them. In this case, the sprites are stored in the "static/images/" folder, so the src code is "/images/image.extension" due to spring looking for the content in the static folder by default.
+The sprites are created in their corresponding classes and stored in arrays so we can access them later. 
+
+Game loop is simple:
+* First, we need to create all the elements we need.
+* We need to render all the images, in this case, we have a render function that does this for us.
+  In the render function, we loop over the different sprite arrays to render all of them.
+* Finally, the loop function calls render and then modifies the different elements.
+This loop is set with the setInterval(func, time(ms)), that calls the given function on the time interval we want.
+
+Movement has been implemented on a simple event pattern, when a key is pressed, we set a flag to true, so that the loop knows the 
+key is pressed. When the key is not pressed anymore, the flag is set to false.
+To know which key is pressed, we access the event.key field that stores the string that represents the key.
+
+Animations are implemented using a frame counter, that way, we can control whether or not we want to render an image based on the frame we are on. Frames advance each time the loop is called.
+
+When the game ends, just refresh the navigator to start all over.
