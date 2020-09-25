@@ -35,6 +35,7 @@ Simple Spring web application which can perform several actions:
 * [How to access the password generator](#how-to-access-the-password-generator)
 * [How works the password generator](#how-works-the-password-generator)
 * [How to modify the password generated](#how-to-modify-the-password-generated)
+* [How to play space invaders](#how-to-play-space-invaders)
 * [How space invaders was implemented](#how-space-invaders-was-implemented)
 
 ## How to build the code
@@ -280,6 +281,21 @@ Below the stadistics, you can modify the password specifying how many characters
 
 When a negative number is input, it is ignored.
 
+## How to play space invaders
+
+The movement area is restricted to the sides and the bottom by the limits of the page.
+The spaceship can't move upwards past a certain limit.
+
+*w - Move up
+*A - Move left
+*S - Move down
+*D - Move right
+*Space - Shoot
+
+Keep pressed the different keys to perform the action continuously.
+
+When the game ends, just refresh the navigator to start all over.
+
 ## How space invaders was implemented
 
 This simpler web version of the space invaders was implemented on javascript using the html element canvas.
@@ -302,5 +318,3 @@ key is pressed. When the key is not pressed anymore, the flag is set to false.
 To know which key is pressed, we access the event.key field that stores the string that represents the key.
 
 Animations are implemented using a frame counter, that way, we can control whether or not we want to render an image based on the frame we are on. Frames advance each time the loop is called.
-
-When the game ends, just refresh the navigator to start all over.
