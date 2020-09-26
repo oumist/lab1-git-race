@@ -6,9 +6,8 @@ RUN gradle build --no-daemon
 
 FROM openjdk:11-jre-slim
 EXPOSE 8080
-RUN mkdir /app
+RUN mkdir /ap
 COPY --from=build /usr/src/git-race/build/libs/lab1-git-race.war /app/lab1-git-race.war
 ENTRYPOINT ["java"] 
 #, "-jar", "/app/lab1-git-race.war"]
 CMD ["-jar", "/app/lab1-git-race.war"]
-CMD ["docker", "run", "-i", "-p", "8080:8080 ingweb/lab1-git-race"]
