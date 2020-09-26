@@ -1,13 +1,14 @@
-FROM openjdk:11
+#https://codefresh.io/docs/docs/learn-by-example/java/gradle/
+FROM gradle:6.6.1-jdk11 AS build
+COPY --chown=gradle:gradle . /usr/src/git-race
+WORKDIR /usr/src/git-race
+RUN gradle build --no-daemon
 
-# Copy src files to container
-WORKDIR /git-race
-COPY src src/
-COPY gradle gradle/
-COPY build.gradle gradlew gradlew.bat ./
-
-# Build 
-RUN "./gradlew" "build"
-
-# Run
-ENTRYPOINT [ "./gradlew", "bootRun" ]
+FROM openjdk:11-jre-slim
+EXPOSE 8080
+RUN mkdir /app
+COPY --from=build /usr/src/git-race/build/libs/lab1-git-race.war /app/lab1-git-race.war
+ENTRYPOINT ["java"] 
+#, "-jar", "/app/lab1-git-race.war"]
+CMD ["-jar", "/app/lab1-git-race.war"]
+CMD ["docker", "run", "-i", "-p", "8080:8080 ingweb/lab1-git-race"]
