@@ -1,6 +1,9 @@
 #!/bin/bash
 #author: Hayk Kocharyan
-#docker build, push and run
+#this script helps you to build this project, 
+#push the docker image to DockerHub and run the app.
+#It's interactive, so every user can use it with his own 
+#credentials
 
 echo
 echo

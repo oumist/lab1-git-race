@@ -1,0 +1,10 @@
+if you want to go into Azure machines
+execute:
+ssh -i <private key path> azureuser@IP
+
+==================================
+IP ADDRESS
+master 1 - 52.255.164.212
+master 2 - 13.68.156.226
+master 3 - 137.117.86.245
+worker 1 - 138.91.116.95

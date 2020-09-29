@@ -25,6 +25,8 @@ Awarded pull requests:
 - [**Spring I**: use RestTemplate for sync requests](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/13) :gift:
 - [**Spring II**: use WebClient for sync request](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/21) :gift:
 - [**The Fixer I**: fix a substantial part of the project that gets broken or obsolete after a merge.](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/19) :gift:
+- [**The Fixer III**: fix a substantial part of the project that gets broken or obsolete after a merge, because fixing is a never-ending activity.](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/20) :gift:
+
 
 User name | NIA | Travis-CI|Score
 ----------|-----|----------|-----
@@ -49,6 +51,7 @@ User name | NIA | Travis-CI|Score
 [Irene Fumanal Lacoma](https://github.com/irefu/lab1-git-race)  | 758325 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/irefu/lab1-git-race) | :gift:
 [Jorge García Pueyo](https://github.com/jgarciapueyo/lab1-git-race) | 758807 | [![Build Status](https://travis-ci.com/jgarciapueyo/lab1-git-race.svg)](https://travis-ci.com/jgarciapueyo/lab1-git-race) | :gift:
 [David Alloza Tejero](https://github.com/david-AT/lab1-git-race)  | 761754 | [![Build Status](https://travis-ci.org/david-AT/lab1-git-race.svg?branch=master)](https://travis-ci.org/david-AT/lab1-git-race)
-[Eduardo Ruiz Cordón](https://github.com/eduardoRuizC/lab1-git-race)  | 764539 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/eduardoRuizC/lab1-git-race) |
-[Hayk Kocharyan](https://github.com/hayk99/lab1-git-race)  | 757715 | [![Build Status](https://travis-ci.com/hayk99/lab1-git-race.svg)](https://travis-ci.com/hayk99/lab1-git-race) |
+[Eduardo Ruiz Cordón](https://github.com/eduardoRuizC/lab1-git-race)  | 764539 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/eduardoRuizC/lab1-git-race)
+[Juan José Tambo](https://github.com/jtambo99/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race) | :gift:
+[Hayk Kocharyan](https://github.com/hayk99/lab1-git-race)  | 757715 | [![Build Status](https://travis-ci.com/hayk99/lab1-git-race.svg)](https://travis-ci.com/hayk99/lab1-git-race)
 your name | your nia | your Travis-ci status
