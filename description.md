@@ -39,6 +39,7 @@ Simple Spring web application which can perform several actions:
 * [WebClient, Reactive Web and how to use it to consume Twitter API key](#webclient-reactive-web-and-how-to-use-it-to-consume-twitter-api-key)
 * [How to play space invaders](#how-to-play-space-invaders)
 * [How space invaders was implemented](#how-space-invaders-was-implemented)
+* [How to use buildPushRun.sh scrip] (#build-push-run)
 
 ## How to build the code
 
@@ -385,3 +386,12 @@ To know which key is pressed, we access the event.key field that stores the stri
 
 Animations are implemented using a frame counter, that way, we can control whether or not we want to render an image based on the frame we are on. Frames advance each time the loop is called.
 
+## How to use *buildPushRun.sh* scrip
+This bash script helps the programer to:
+
+  - Build containing folder with Gradle
+  - Push the docker image to Docker Hub ® 
+  - Run the Docker container. 
+
+In first place, the script will ask you to provide Docker image name and then it will build de docker image. If everything is alright it will start to push the image to Docker Hub, so you should provide your Docker username and the repository name you want to be saved as. 
+Finally, this script will run the iamge at port 8080.
