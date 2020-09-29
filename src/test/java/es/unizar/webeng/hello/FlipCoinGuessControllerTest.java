@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  * @since 09/25/2020
  *
  */
-@WebMvcTest(FlipCoinGuessController.class)
+//@WebMvcTest(FlipCoinGuessController.class)
 public class FlipCoinGuessControllerTest {
     private final static String DEFAULT_RESULT = "NOT RESULT YET | ";
     private final static String DEFAULT_MESSAGE = "WAITING FOR RESULT";
@@ -31,7 +31,7 @@ public class FlipCoinGuessControllerTest {
     private final static String TAILS_RESULT = "TAILS | ";
     private final static String ERROR = "ERROR";
 
-    @Autowired
+    //@Autowired
     private FlipCoinGuessController flipController = new FlipCoinGuessController();
 
     /**
