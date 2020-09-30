@@ -402,7 +402,7 @@ This bash script helps the programer to:
  - ./buildPushRun.sh -A        for BUILD, PUSH & RUN
  - ./buildPushRun.sh             for HELP
 
-As you can see you can just build or push or run, and also can just build and run without pushing. 
+As you can see you can choose to execute 3 options in a row, online one option (build, push or run), or if you prefer you can build and run without pushing.
 In each option the script will ask you some data. For example the run and buil option will require docker image name, and the push option will ask to for your Docker Hub username and the repository final name.
 
 ## How to monitor with Grafana and Prometheus
