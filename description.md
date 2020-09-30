@@ -39,7 +39,8 @@ Simple Spring web application which can perform several actions:
 * [WebClient, Reactive Web and how to use it to consume Twitter API key](#webclient-reactive-web-and-how-to-use-it-to-consume-twitter-api-key)
 * [How to play space invaders](#how-to-play-space-invaders)
 * [How space invaders was implemented](#how-space-invaders-was-implemented)
-* [How to use buildPushRun.sh scrip] (#build-push-run)
+* [How to use buildPushRun.sh script](#how-to-use-buildPushRun.sh-script)
+* [How to monitor with Grafana and Prometheus](#How-to-monitor-with-Grafana-and-Prometheus)
 
 ## How to build the code
 
@@ -386,12 +387,37 @@ To know which key is pressed, we access the event.key field that stores the stri
 
 Animations are implemented using a frame counter, that way, we can control whether or not we want to render an image based on the frame we are on. Frames advance each time the loop is called.
 
-## How to use *buildPushRun.sh* scrip
+## How to use buildPushRun.sh script
 This bash script helps the programer to:
 
   - Build containing folder with Gradle
   - Push the docker image to Docker Hub ® 
   - Run the Docker container. 
 
-In first place, the script will ask you to provide Docker image name and then it will build de docker image. If everything is alright it will start to push the image to Docker Hub, so you should provide your Docker username and the repository name you want to be saved as. 
-Finally, this script will run the iamge at port 8080.
+**Here is the script usage summary:** 
+ - ./buildPushRun.sh -B        for BUILD
+ - ./buildPushRun.sh -P        for PUSH
+ - ./buildPushRun.sh -R        for RUN
+ - ./buildPushRun.sh -BR      for BUILD & RUN
+ - ./buildPushRun.sh -A        for BUILD, PUSH & RUN
+ - ./buildPushRun.sh             for HELP
+
+As you can see you can just build or push or run, and also can just build and run without pushing. 
+In each option the script will ask you some data. For example the run and buil option will require docker image name, and the push option will ask to for your Docker Hub username and the repository final name.
+
+## How to monitor with Grafana and Prometheus
+
+This two softwares can be deployed with Helm inside a Kubernetes cluster. First of all we need to have running a K8s cluster, for example we can deploy it on [Google](#how-to-deploy-Docker-image-on-Google-Cloud-Kubernetes) or if you want a simple and quick set-up Minikube is a good option. 
+
+**Minikube set-up steps:**
+1. [Install minikube on the machine](#https://kubernetes.io/docs/tasks/tools/install-minikube/)
+2. Run `minikube start`. This will create a one node k8s cluster.
+3. Execute `kubectl apply -f webpage.yaml` 
+  This file contains the necessary lines to run a pod with our webpage in the cluster. When we execute this command Kubectl pull the docker image that we specified in the file on line 32 and run it on a Pod. It's advisable to change the image kubernetes pull for the deploy (line 32). 
+4. [Install helm](#https://helm.sh/docs/intro/install/)
+5. Install prometheus with Helm: `helm install stable/prometheus-operator --generate-name`
+6. Now if you execute kubectl get pods you can see multiple prometheus pods running in the cluster
+7. Exposing the Prometheus and Grafana pod is as easy as edit the yaml. Execute `kubectl edit service prometheus-operator-XXXXXX-prometheus` and change in spec section *type:ClusterIP* for *type:LoadBalancer*. For Grafana is the same process but the command is `kubectl edit svc prometheus-operator-XXXXXXXXXX-grafana`.
+8. Now with `minikube service prometheus-service-name --url` you can get the exposed url
+9. Once we are logged in Grafana *( defult user: admin*, *default password: prom-operator )* we set Prometheus as the data source for our metrics and start to monitor.
+10. Finally, we can create diferent dashboards monitoring several resources

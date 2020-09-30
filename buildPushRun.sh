@@ -2,12 +2,10 @@
 #author: Hayk Kocharyan
 #this script helps you to build this project, 
 #push the docker image to DockerHub and run the app.
-#It's interactive, so every user can use it with his own 
-#credentials
+#It's interactive, so every user can use it with his own credentials
 
 
 
-echo
 echo
 echo -en '       \033[92m WELCOME YOU CHOSE \033[0m'
 
@@ -24,7 +22,6 @@ build (){
     then
         echo; echo
         echo -e '\033[33m docker build finished Unsuccessful \033[0m'
-        echo; echo
         exit 1
     else
         echo; echo
@@ -58,7 +55,6 @@ push (){
     then
         echo; echo    
         echo -e '\033[33m !!!!!IMAGE CAN NOT BE PUSHED!!!\033[0m'
-        echo -e '\033[33m Pushed Successfullly!!!\033[0m'
         echo; echo
     else
         echo; echo
@@ -83,7 +79,7 @@ run (){
     if [ $? -ne 0 ];
     then
         echo; echo
-        echo "          !!!!!   docker run CAN NOT be executed successful "
+        echo "!!!!!   docker run CAN NOT be executed successful "
         exit 1
     fi
 }
