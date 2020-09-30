@@ -403,11 +403,11 @@ This bash script helps the programer to:
  - ./buildPushRun.sh             for HELP
 
 As you can see you can choose to execute 3 options in a row, online one option (build, push or run), or if you prefer you can build and run without pushing.
-In each option the script will ask you some data. For example the run and buil option will require docker image name, and the push option will ask to for your Docker Hub username and the repository final name.
+In each option the script will ask for some data. For example the run and build option will require docker image name, and the push option will ask for your Docker Hub username and the repository final name.
 
 ## How to monitor with Grafana and Prometheus
 
-This two softwares can be deployed with Helm inside a Kubernetes cluster. First of all we need to have running a K8s cluster, for example we can deploy it on [Google](#how-to-deploy-Docker-image-on-Google-Cloud-Kubernetes) or if you want a simple and quick set-up Minikube is a good option. 
+This two softwares can be deployed with Helm inside a Kubernetes cluster. First of all, we need to have a K8s cluster running, for example we can deploy it on [Google](#how-to-deploy-Docker-image-on-Google-Cloud-Kubernetes) or if you want a simple and quick set-up Minikube is a good option. 
 
 **Minikube set-up steps:**
 1. [Install minikube on the machine](#https://kubernetes.io/docs/tasks/tools/install-minikube/)
