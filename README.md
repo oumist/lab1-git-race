@@ -54,3 +54,5 @@ User name | NIA | Travis-CI|Score
 [Eduardo Ruiz Cordón](https://github.com/eduardoRuizC/lab1-git-race)  | 764539 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/eduardoRuizC/lab1-git-race)
 [Juan José Tambo](https://github.com/jtambo99/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status
+Jose Ignacio Hernandez | 740491 | [![Build Status](https://travis-ci.com/740491/lab1-git-race.svg)](https://travis-ci.com/740491/lab1-git-race)
+
