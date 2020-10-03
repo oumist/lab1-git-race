@@ -7,15 +7,14 @@ Some ideas for obtaining a :gift: if you are the first that:
 - **Back to the Future II**: migrate from Java 8 or Java 11 to Scala 2.13
 - **Back to the Future III**: migrate from Java or Scala to Kotlin 1.4
 - **Home improvement III**: migrate from JSP or Thymeleaf to any JS framework and a Restful web service (no MVC server side)
-- **Home alone III**: create an incredible and really well documented new feature
 - **Spring III**: use WebClient for async request
-- **The Fixer II**: fix a substantial part of the project that gets broken or obsolete after a merge, again!
 - **The Fixer III**: fix a substantial part of the project that gets broken or obsolete after a merge, because fixing is a never-ending activity.
 
 Awarded pull requests:
 
 - [**Home alone I**: create an impressive and documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/2) :gift:
 - [**Home alone II**: create an even more impressive and well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/17) :gift:
+- [**Home alone III**: create an incredible and really well documented new feature](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/26) :gift:
 - [**Back to the Future I**: migrate from Java 8 to Java 11](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement I**: update Spring Boot to the latest RELEASE version](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/3) :gift:
 - [**Home improvement II**: migrate from JSP to Thymeleaf (MVC server side)](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/12) :gift:
@@ -25,7 +24,7 @@ Awarded pull requests:
 - [**Spring I**: use RestTemplate for sync requests](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/13) :gift:
 - [**Spring II**: use WebClient for sync request](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/21) :gift:
 - [**The Fixer I**: fix a substantial part of the project that gets broken or obsolete after a merge.](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/19) :gift:
-- [**The Fixer III**: fix a substantial part of the project that gets broken or obsolete after a merge, because fixing is a never-ending activity.](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/20) :gift:
+- [**The Fixer II**: fix a substantial part of the project that gets broken or obsolete after a merge, again!.](https://github.com/UNIZAR-30246-WebEngineering/lab1-git-race/pull/20) :gift:
 
 
 User name | NIA | Travis-CI|Score
@@ -53,6 +52,7 @@ User name | NIA | Travis-CI|Score
 [David Alloza Tejero](https://github.com/david-AT/lab1-git-race)  | 761754 | [![Build Status](https://travis-ci.org/david-AT/lab1-git-race.svg?branch=master)](https://travis-ci.org/david-AT/lab1-git-race)
 [Eduardo Ruiz Cordón](https://github.com/eduardoRuizC/lab1-git-race)  | 764539 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/eduardoRuizC/lab1-git-race)
 [Juan José Tambo](https://github.com/jtambo99/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race) | :gift:
+[Hayk Kocharyan](https://github.com/hayk99/lab1-git-race)  | 757715 | [![Build Status](https://travis-ci.com/hayk99/lab1-git-race.svg)](https://travis-ci.com/hayk99/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status
 Jose Ignacio Hernandez | 740491 | [![Build Status](https://travis-ci.com/740491/lab1-git-race.svg)](https://travis-ci.com/740491/lab1-git-race)
 
