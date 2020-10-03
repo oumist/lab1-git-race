@@ -52,7 +52,7 @@ User name | NIA | Travis-CI|Score
 [David Alloza Tejero](https://github.com/david-AT/lab1-git-race)  | 761754 | [![Build Status](https://travis-ci.org/david-AT/lab1-git-race.svg?branch=master)](https://travis-ci.org/david-AT/lab1-git-race)
 [Eduardo Ruiz Cordón](https://github.com/eduardoRuizC/lab1-git-race)  | 764539 | [![Build Status](https://travis-ci.com/irefu/lab1-git-race.svg)](https://travis-ci.com/eduardoRuizC/lab1-git-race)
 [Juan José Tambo](https://github.com/jtambo99/lab1-git-race) | 755742 | [![Build Status](https://travis-ci.com/jtambo99/lab1-git-race.svg)](https://travis-ci.com/jtambo99/lab1-git-race) | :gift:
+[Jose Ignacio Hernandez](https://github.com/740491/lab1-git-race) | 740491 | [![Build Status](https://travis-ci.com/740491/lab1-git-race.svg)](https://travis-ci.com/740491/lab1-git-race)
 [Hayk Kocharyan](https://github.com/hayk99/lab1-git-race)  | 757715 | [![Build Status](https://travis-ci.com/hayk99/lab1-git-race.svg)](https://travis-ci.com/hayk99/lab1-git-race) | :gift:
 your name | your nia | your Travis-ci status
-Jose Ignacio Hernandez | 740491 | [![Build Status](https://travis-ci.com/740491/lab1-git-race.svg)](https://travis-ci.com/740491/lab1-git-race)
 
