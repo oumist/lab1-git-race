@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tweets from <span th:text="${user}"/></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>
+            Twitter Timeline
+        </h1>
+    </div>
+    <div class="row" th:if="${error eq null}">
+        <div class="list-group">
+            <div class="list-group-item" th:each="tweet : ${tweets}">
+                <p th:text="${tweet.text}"/>
+            </div>
+        </div>
+    </div>
+    <div class="row" th:if="${error ne null}">
+        <div>
+            <p th:text="${error}"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

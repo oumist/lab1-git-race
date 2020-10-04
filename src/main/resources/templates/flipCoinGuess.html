@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Flip a coin and guess the result!</title>
+    <h1>Flip a coin and guess the result!</h1>
+</head>
+<body>
+    <form action="/flipAction" method="post">
+        <button type="submit" name="guess" value="0">HEADS</button>
+        <button type="submit" name="guess" value="1">TAILS</button>
+    </form>
+
+    <table>
+        <tr>
+            <td th:text="${result}"></td>
+            <td th:text="${message}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

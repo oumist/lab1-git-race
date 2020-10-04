@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Counter</title>
+
+    <body>
+        <!--This reference do the same method that when initialize!-->
+        <a href="/">WELCOME PAGE</a>
+
+        <form action ="/action-counter" method="post">
+            <label>
+                <input name="counter" th:value="${counter}" readonly="readonly">
+            </label>
+            <button type="submit" name="button" value="increase">+</button>
+            <button type="submit" name="button" value="decrease">-</button>
+            <button type="submit" name="button" value="init">RESTART</button>
+        </form>
+    </body>
+</html>
