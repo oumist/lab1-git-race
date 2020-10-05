@@ -46,6 +46,7 @@ public class HelloControllerUnitTest {
         assertTrue(map.containsKey("host"));
         assertTrue(map.containsKey("ip"));
         assertTrue(map.containsKey("java"));
+        assertTrue(map.containsKey("temperature"));
         assertEquals(map.get("message"), message);
     }
 

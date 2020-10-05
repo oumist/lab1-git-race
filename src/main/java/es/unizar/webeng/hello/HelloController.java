@@ -35,7 +35,7 @@ public class HelloController {
     @Value("${app.joke_const:Hello World}")
     private String joke_const;
     private String link = "Abre este enlace";
-    private String weather_API = "http://api.openweathermap.org/data/2.5/forecast?id=3104324&appid=3974461a1f67f51495d6c273db02ccaf&lang=es";
+    private String weather_API = "http://api.openweathermap.org/data/2.5/forecast?id=3104324&appid=3974461a1f67f51495d6c273db02ccaf&lang=es&units=metric";
 
     private String luckyColor(){
         
@@ -136,10 +136,8 @@ public class HelloController {
             String dataResult = new String(result);
             String temperature = dataResult.substring(dataResult.indexOf("temp") + 6,
                     dataResult.indexOf("feels_like") - 2);
-            System.out.println(temperature);
-            //Temperature is received in Kelvin, we use it in Celsius
-            int intTemperature = Integer.parseInt(temperature) - 273;
-            model.put("temperature", intTemperature);
+
+            model.put("temperature", temperature);
 
 
         }catch (IOException e){
