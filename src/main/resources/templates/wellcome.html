@@ -39,6 +39,8 @@
             <kbd th:block th:text=" ${'-' + joke_minus}"></kbd><kbd></kbd><br/><br/>
             <kbd th:block th:text=" ${extra_message}"></kbd>
             <a href ="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><th:block th:text="${link}"></th:block></a>
+            <h2><th:block th:text="${message + ' &#8594; ' + dice}"></th:block></h2>
+            <h2>Temperatura actual en Zaragoza <th:block th:text="${temperature}"></th:block>ºC</h2>
             <p><img src="images/Pilar.jpg"/></p>
             <kbd><a href="/password" style="color: white">Access to the password generator</a></kbd>
             <script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
