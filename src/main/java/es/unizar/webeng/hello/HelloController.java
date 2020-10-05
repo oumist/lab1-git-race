@@ -65,7 +65,9 @@ public class HelloController {
      * A controller method which is called when the root endpoint is ordered by a client.
      *
      * It modifies the model, setting into the key "time" the actual date and into the key "message" the
-     * hardcoded value assigned to the attribute "message". Also includes a rolling dice result.
+     * hardcoded value assigned to the attribute "message". Includes a rolling dice result, and the
+     * current weather for Zaragoza in Celsius.
+     *
      *
      * @param model the MVC model
      * @return "wellcome", hardcoded

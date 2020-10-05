@@ -1,46 +1,64 @@
 <!-- markdownlint-disable MD004 -->
 <!-- omit in toc -->
+
 # Web Engineering 2020-2021 / Lab1 Git Race
 
 Simple Spring web application which can perform several actions:
 
-* Get current date, user & welcome message
-  * The actual date (*Thu Sep 17 16:26:04 CEST 2020*, for example)
-  * The user (@\<user>)
-  * A welcome message, "Hola alumno", that can be customized to "Hola \<user>"
-  * The user is "alumno" by default and changes using the /\<name> path, being \<name> any username
-* Add two integer numbers
-* Show a link to a youtube video
-* Show current browser and version
-* Show your IP, Hostname and the JAVA version used
-* Generate a safe password and modify it
-* Roll the dice to resolve disputes
-* ¡PLAY SPACE INVADERS!
+- Get current date, user & welcome message
+  - The actual date (_Thu Sep 17 16:26:04 CEST 2020_, for example)
+  - The user (@\<user>)
+  - A welcome message, "Hola alumno", that can be customized to "Hola \<user>"
+  - The user is "alumno" by default and changes using the /\<name> path, being \<name> any username
+- Add two integer numbers
+- Show a link to a youtube video
+- Show current browser and version
+- Show your IP, Hostname and the JAVA version used
+- Generate a safe password and modify it
+- Roll the dice to resolve disputes
+- ¡PLAY SPACE INVADERS!
 
 <!-- omit in toc -->
+
 ## Table of Contents
 
-* [How to build the code](#how-to-build-the-code)
-* [How to test the code](#how-to-test-the-code)
-* [How to run the code](#how-to-run-the-code)
-* [How to deploy the code in a server (using Heroku)](#how-to-deploy-the-code-in-a-server-using-heroku)
-* [Which are the technologies used in the code](#which-are-the-technologies-used-in-the-code)
-* [How to deploy the code in a server](#how-to-deploy-the-code-in-a-server)
-* [How to deploy the code in a server (using AWS)](#how-to-deploy-the-code-in-a-server-using-aws)
-* [Which is the purpose of a specific java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
-* [Copyright issues](#copyright-issues)
-* [How to get the required api keys](#how-to-get-the-required-api-keys)
-* [How to access to the LOTR feature](#how-to-access-to-the-lotr-feature)
-* [How to access the password generator](#how-to-access-the-password-generator)
-* [How works the password generator](#how-works-the-password-generator)
-* [How to modify the password generated](#how-to-modify-the-password-generated)
-* [How to deploy Docker image on Google Cloud Kubernetes](#how-to-deploy-Docker-image-on-Google-Cloud-Kubernetes)
-* [How to access the text word counter](#how-to-access-the-text-word-counter)
-* [WebClient, Reactive Web and how to use it to consume Twitter API key](#webclient-reactive-web-and-how-to-use-it-to-consume-twitter-api-key)
-* [How to play space invaders](#how-to-play-space-invaders)
-* [How space invaders was implemented](#how-space-invaders-was-implemented)
-* [How to use buildPushRun.sh script](#how-to-use-buildPushRun.sh-script)
-* [How to monitor with Grafana and Prometheus](#How-to-monitor-with-Grafana-and-Prometheus)
+- [Web Engineering 2020-2021 / Lab1 Git Race](#web-engineering-2020-2021--lab1-git-race)
+  - [Table of Contents](#table-of-contents)
+  - [How to build the code](#how-to-build-the-code)
+  - [How to test the code](#how-to-test-the-code)
+  - [How to run the code](#how-to-run-the-code)
+  - [How to deploy the code in a server (using Heroku)](#how-to-deploy-the-code-in-a-server-using-heroku)
+    - [Web's deployment using Heroku and GitHub](#webs-deployment-using-heroku-and-github)
+    - [Web's deployment using Google Cloud Engine](#webs-deployment-using-google-cloud-engine)
+  - [Which are the technologies used in the code](#which-are-the-technologies-used-in-the-code)
+  - [How to deploy the code in a server](#how-to-deploy-the-code-in-a-server)
+  - [How to deploy the code in a server (using AWS)](#how-to-deploy-the-code-in-a-server-using-aws)
+    - [PREREQUISITES](#prerequisites)
+    - [STEPS](#steps)
+      - [Account Setup](#account-setup)
+      - [Elastic Beanstalk setup](#elastic-beanstalk-setup)
+      - [Environment creation](#environment-creation)
+    - [Build Automatization](#build-automatization)
+    - [NOTE](#note)
+  - [Which is the purpose of a specific java annotation](#which-is-the-purpose-of-a-specific-java-annotation)
+    - [@SpringBootApplication](#springbootapplication)
+  - [Copyright issues](#copyright-issues)
+  - [How to get the required api keys](#how-to-get-the-required-api-keys)
+  - [How to access to the LOTR feature](#how-to-access-to-the-lotr-feature)
+  - [How to access the password generator](#how-to-access-the-password-generator)
+  - [How works the password generator](#how-works-the-password-generator)
+  - [How to modify the password generated](#how-to-modify-the-password-generated)
+  - [How to deploy Docker image on Google Cloud Kubernetes](#how-to-deploy-docker-image-on-google-cloud-kubernetes)
+  - [How to access the text word counter](#how-to-access-the-text-word-counter)
+  - [WebClient, Reactive Web and how to use it to consume Twitter API key](#webclient-reactive-web-and-how-to-use-it-to-consume-twitter-api-key)
+    - [Introduction](#introduction)
+    - [RestTemplate vs. WebClient](#resttemplate-vs-webclient)
+    - [Twitter functionality](#twitter-functionality)
+  - [How to play space invaders](#how-to-play-space-invaders)
+  - [How space invaders was implemented](#how-space-invaders-was-implemented)
+  - [How to use buildPushRun.sh script](#how-to-use-buildpushrunsh-script)
+  - [How to monitor with Grafana and Prometheus](#how-to-monitor-with-grafana-and-prometheus)
+  - [How the weather API works](#how-the-weather-api-works)
 
 ## How to build the code
 
@@ -100,11 +118,11 @@ Web deployed at Google Cloud: [IngWeb page](http://34.89.40.206/)
 
 ## Which are the technologies used in the code
 
-* Spring ~ Controller side
-* HTML/CSS ~ View side
-* Tomcat ~ Server side
-* Java ~ Controller engine
-* Thymeleaf ~ Server-side java template
+- Spring ~ Controller side
+- HTML/CSS ~ View side
+- Tomcat ~ Server side
+- Java ~ Controller engine
+- Thymeleaf ~ Server-side java template
 
 This project's code is documented following Javadoc standards.
 
@@ -145,8 +163,8 @@ Windows Guide: <https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-i
 
 1. Having installed all the prerequisites, install the **AWS EB CLI**, using the **pip** command (Windows and Linux) or the **brew** command (MacOS)
 2. Make sure the python scripts folder is in the **PATH user environment variable**, as explained in the following tutorial:
-<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html> (Windows and Linux)
-<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html> (MacOS).
+   <https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html> (Windows and Linux)
+   <https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html> (MacOS).
 3. Login to our AWS account and access the Identity and Access Management (**IAM**) console: <https://console.aws.amazon.com/iam/home#/home>
 4. Select the **Users** tab on the left and then **Add user(s)**
 5. Give the new user any name and select (AT LEAST) **programmatic access** in the access options.
@@ -173,23 +191,23 @@ Windows Guide: <https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-i
 1. Execute the command `eb create` and type the name, DNS CNAME, load balancer and Spot Fleet as you want the app to run. (in my case: **lab1-git-race-app-env**, **lab1-git-race-app-env**, **application**, no. This means the traffic will be redirected in the application level, and the Spot Fleet service from Amazon won't be used).
 1. Re-enter the Git HTTPS credentials.
 1. Go to the AWS Elastic Beanstalk console and navigate to **Environments**.
-<https://eu-west-3.console.aws.amazon.com/elasticbeanstalk/home?region=eu-west-3#/environments>
+   <https://eu-west-3.console.aws.amazon.com/elasticbeanstalk/home?region=eu-west-3#/environments>
 1. Select the environment we just created and go to **Settings** on the left part of the site
 1. Edit the **Software** section in the settings and add the environment variable **SERVER_PORT** and set it to the value **5000**.
-This is so the environment knows which port the server is using (currently 5000).
+   This is so the environment knows which port the server is using (currently 5000).
 
 ### Build Automatization
 
 1. Go to the CodeCommit console and to the repository we just created. <https://eu-west-3.console.aws.amazon.com/codesuite/codecommit/repositories?region=eu-west-3>
 1. Navigate to **CodeBuild** and create a new compilation process.
 1. Fill in the data:
-    - Give it a name.
-    - Select `AWS CodeCommit` as the provider, and then select our repository and the branch we are commiting to.
-    - Choose any option for the environment (in my case, `administrated image` and `Amazon Linux 2`)
-    - Make sure the default option (compilation specification file) is chosen. This will use the `buildspec.yaml` file that indicates CodeBuild **how to build the code and what are the outputs**.
-    - On the Artifacts part, we must add an Amazon S3, and the name of an elasticbeanstalk bucket should appear. We choose that one and proceed to set the name empty (it will be filled automatically) and set the route to `build/libs` (which is the file gradle builds).
-    And most importantly, we must select **Zip** as the packaging, so Elastic Beanstalk can read it afterwards.
-    - We can skip to the last part and create the project.
+   - Give it a name.
+   - Select `AWS CodeCommit` as the provider, and then select our repository and the branch we are commiting to.
+   - Choose any option for the environment (in my case, `administrated image` and `Amazon Linux 2`)
+   - Make sure the default option (compilation specification file) is chosen. This will use the `buildspec.yaml` file that indicates CodeBuild **how to build the code and what are the outputs**.
+   - On the Artifacts part, we must add an Amazon S3, and the name of an elasticbeanstalk bucket should appear. We choose that one and proceed to set the name empty (it will be filled automatically) and set the route to `build/libs` (which is the file gradle builds).
+     And most importantly, we must select **Zip** as the packaging, so Elastic Beanstalk can read it afterwards.
+   - We can skip to the last part and create the project.
 1. Once we have that done, we navigate to the **Compilation details** part and click on the **Service Role**. We select the policy `CodeBuildBasePolicy-Gradle_compilation-eu-west-3` and edit it:
    - On S3, we select **All resources** on the resources menu.
    - On CloudWatch Logs, we do the same.
@@ -212,6 +230,7 @@ If any modification is made to the repository, we must use the command `git push
 ## Which is the purpose of a specific java annotation
 
 <!-- omit in toc -->
+
 ### @SpringBootApplication
 
 This annotation is used on top of most Spring Boot main class programs, as it enables the developer an to configure and scan for components automatically.
@@ -220,9 +239,9 @@ This annotation has teh same function as @ComponentScan, @EnableAutoConfiguratio
 
 Here's a brief description of each annotation's function:
 
-* @Configuration: allows us define the class which possesses it as a configuration class. It also allows us to inject additional dependencies(beans).
-* @EnableAutoConfiguration: it's Spring Boot's automatic configuration, which changes in function of the beans aggregated.
-* @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
+- @Configuration: allows us define the class which possesses it as a configuration class. It also allows us to inject additional dependencies(beans).
+- @EnableAutoConfiguration: it's Spring Boot's automatic configuration, which changes in function of the beans aggregated.
+- @ComponentScan: works alongside @Configuration in order to tell Spring where to find other @Component, always on the package where the application is located.
 
 If the developer wants to replace one of these three annotations for a different one, it would be necessary to substitute the unwanted annotation.
 
@@ -243,7 +262,7 @@ file.
 ## How to access to the LOTR feature
 
 Access to the path /rings-quote to use this feature.
-Remember to set the api key first to use it.  
+Remember to set the api key first to use it.
 
 ## How to access the password generator
 
@@ -256,11 +275,11 @@ is a symmetric encryption algorithm. The secret key used is the actual date with
 
 If none words are input, the password isn't generated. Otherwise, it shows the password and statistics about it:
 
-* Number of characters (length)
-* Number of special characters
-* Number of uppercase letters
-* Number of lowercase letters
-* Number of digits
+- Number of characters (length)
+- Number of special characters
+- Number of uppercase letters
+- Number of lowercase letters
+- Number of digits
 
 Source of AES encryption: <https://howtodoinjava.com/java/java-security/java-aes-encryption-example/>
 
@@ -268,11 +287,11 @@ Source of AES encryption: <https://howtodoinjava.com/java/java-security/java-aes
 
 Below the stadistics, you can modify the password specifying how many characters you want to add at random positions. These characters can be:
 
-* special characters
-* uppercase letters
-* lowercase letters
-* digits
-* random characters
+- special characters
+- uppercase letters
+- lowercase letters
+- digits
+- random characters
 
 When a negative number is input, it is ignored.
 
@@ -309,7 +328,7 @@ Follow these steps to deploy Docker containter on Kuberentes:
 - Create a GKE cluster selecting the proyect id and [compute zone](https://cloud.google.com/container-registry)
 - Create a Kubernetes implementation for the Docker image (with flag num-nodes=1)
 - Set 3 replicas
-- Create *HorizontalPodAutoscaler* resource for implementation
+- Create _HorizontalPodAutoscaler_ resource for implementation
 - Generate Kubernetes service for the App implementation
 
 For more detailed information: <https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app#cloud-shell_2>
@@ -324,7 +343,7 @@ The text word counter is found in the path /textCounter. You can find a link on 
 
 ### Introduction
 
-In the traditional web, the logic is in the server side and clients fetch data synchronously from the server, usually the html because the webs have server-side rendering. In the reactive web, the logic is in the server side and in the client side. The client can fetch data asynchronously and modify the html with client side rendering [1](https://www.outsystems.com/blog/posts/all-you-need-to-know-about-reactive-web/). 
+In the traditional web, the logic is in the server side and clients fetch data synchronously from the server, usually the html because the webs have server-side rendering. In the reactive web, the logic is in the server side and in the client side. The client can fetch data asynchronously and modify the html with client side rendering [1](https://www.outsystems.com/blog/posts/all-you-need-to-know-about-reactive-web/).
 
 The original web framework provided by [Spring Framework](https://spring.io/) is Spring Web MVC. However, as we have seen with the reactive web, there is a need for non-blocking constructs that enable handling concurrency using fewer hardware resources. The purpose of Spring Webflux is to create a new "API to serve as a foundation accross any non-blocking runtime".
 
@@ -334,7 +353,7 @@ The original web framework provided by [Spring Framework](https://spring.io/) is
 
 ### Twitter functionality
 
-The functionality added to the application in the endpoint `/twitter/{user}` prints the last 5 tweets of *user*. It does so by using `WebClient` to consume the Twitter API.
+The functionality added to the application in the endpoint `/twitter/{user}` prints the last 5 tweets of _user_. It does so by using `WebClient` to consume the Twitter API.
 
 To replicate this functionality, you have to create a [Twitter Developper Account](https://developer.twitter.com/en/apply-for-access) and a Project. This will generate some credentials that you have to add to `src/main/java/resources/application.properties`. (This is not the best way to do it and Spring offers better alternatives like [Spring Vault](https://spring.io/projects/spring-vault)).
 
@@ -354,11 +373,11 @@ String res = client.get()
 The movement area is restricted to the sides and the bottom by the limits of the page.
 The spaceship can't move upwards past a certain limit.
 
-* w - Move up
-* A - Move left
-* S - Move down
-* D - Move right
-* Space - Shoot
+- w - Move up
+- A - Move left
+- S - Move down
+- D - Move right
+- Space - Shoot
 
 Keep pressed the different keys to perform the action continuously.
 
@@ -369,55 +388,65 @@ When the game ends, just refresh the navigator to start all over.
 This simpler web version of the space invaders was implemented on javascript using the html element canvas.
 
 The canvas allows to render images into the screen, so we can print the different sprites that the game needs.
-The sprites are implemented on a Sprite class that extends the Image class, and we need to set the source to be able to access them. 
+The sprites are implemented on a Sprite class that extends the Image class, and we need to set the source to be able to access them.
 In this case, the sprites are stored in the "static/images/" folder, so the src code is "/images/image.extension" due to spring looking for the content in the static folder by default.
-The sprites are created in their corresponding classes and stored in arrays so we can access them later. 
+The sprites are created in their corresponding classes and stored in arrays so we can access them later.
 
 Game loop is simple:
-* First, we need to create all the elements we need.
-* We need to render all the images, in this case, we have a render function that does this for us.
+
+- First, we need to create all the elements we need.
+- We need to render all the images, in this case, we have a render function that does this for us.
   In the render function, we loop over the different sprite arrays to render all of them.
-* Finally, the loop function calls render and then modifies the elements(movement of the spaceship, bullets etc).The different events that occur in the game just change values that are set in the loop.
+- Finally, the loop function calls render and then modifies the elements(movement of the spaceship, bullets etc).The different events that occur in the game just change values that are set in the loop.
 
 This loop is set with the setInterval(func, time(ms)), that calls the given function on the time interval we want.
 
-Movement and shooting has been implemented on a simple event pattern, when a key is pressed, we set a flag to true, so that the loop knows the 
+Movement and shooting has been implemented on a simple event pattern, when a key is pressed, we set a flag to true, so that the loop knows the
 key is pressed. When the key is not pressed anymore, the flag is set to false.
 To know which key is pressed, we access the event.key field that stores the string that represents the key.
 
 Animations are implemented using a frame counter, that way, we can control whether or not we want to render an image based on the frame we are on. Frames advance each time the loop is called.
 
 ## How to use buildPushRun.sh script
+
 This bash script helps the programer to:
 
-  - Build containing folder with Gradle
-  - Push the docker image to Docker Hub ® 
-  - Run the Docker container. 
+- Build containing folder with Gradle
+- Push the docker image to Docker Hub ®
+- Run the Docker container.
 
-**Here is the script usage summary:** 
- - ./buildPushRun.sh -B        for BUILD
- - ./buildPushRun.sh -P        for PUSH
- - ./buildPushRun.sh -R        for RUN
- - ./buildPushRun.sh -BR      for BUILD & RUN
- - ./buildPushRun.sh -A        for BUILD, PUSH & RUN
- - ./buildPushRun.sh             for HELP
+**Here is the script usage summary:**
+
+- ./buildPushRun.sh -B        for BUILD
+- ./buildPushRun.sh -P        for PUSH
+- ./buildPushRun.sh -R        for RUN
+- ./buildPushRun.sh -BR      for BUILD & RUN
+- ./buildPushRun.sh -A        for BUILD, PUSH & RUN
+- ./buildPushRun.sh             for HELP
 
 As you can see you can choose to execute 3 options in a row, online one option (build, push or run), or if you prefer you can build and run without pushing.
 In each option the script will ask for some data. For example the run and build option will require docker image name, and the push option will ask for your Docker Hub username and the repository final name.
 
 ## How to monitor with Grafana and Prometheus
 
-This two softwares can be deployed with Helm inside a Kubernetes cluster. First of all, we need to have a K8s cluster running, for example we can deploy it on [Google](#how-to-deploy-Docker-image-on-Google-Cloud-Kubernetes) or if you want a simple and quick set-up Minikube is a good option. 
+This two softwares can be deployed with Helm inside a Kubernetes cluster. First of all, we need to have a K8s cluster running, for example we can deploy it on [Google](#how-to-deploy-Docker-image-on-Google-Cloud-Kubernetes) or if you want a simple and quick set-up Minikube is a good option.
 
 **Minikube set-up steps:**
+
 1. [Install minikube on the machine](#https://kubernetes.io/docs/tasks/tools/install-minikube/)
 2. Run `minikube start`. This will create a one node k8s cluster.
-3. Execute `kubectl apply -f webpage.yaml` 
-  This file contains the necessary lines to run a pod with our webpage in the cluster. When we execute this command Kubectl pull the docker image that we specified in the file on line 32 and run it on a Pod. It's advisable to change the image kubernetes pull for the deploy (line 32). 
+3. Execute `kubectl apply -f webpage.yaml`
+   This file contains the necessary lines to run a pod with our webpage in the cluster. When we execute this command Kubectl pull the docker image that we specified in the file on line 32 and run it on a Pod. It's advisable to change the image kubernetes pull for the deploy (line 32).
 4. [Install helm](#https://helm.sh/docs/intro/install/)
 5. Install prometheus with Helm: `helm install stable/prometheus-operator --generate-name`
 6. Now if you execute kubectl get pods you can see multiple prometheus pods running in the cluster
-7. Exposing the Prometheus and Grafana pod is as easy as edit the yaml. Execute `kubectl edit service prometheus-operator-XXXXXX-prometheus` and change in spec section *type:ClusterIP* for *type:LoadBalancer*. For Grafana is the same process but the command is `kubectl edit svc prometheus-operator-XXXXXXXXXX-grafana`.
+7. Exposing the Prometheus and Grafana pod is as easy as edit the yaml. Execute `kubectl edit service prometheus-operator-XXXXXX-prometheus` and change in spec section _type:ClusterIP_ for _type:LoadBalancer_. For Grafana is the same process but the command is `kubectl edit svc prometheus-operator-XXXXXXXXXX-grafana`.
 8. Now with `minikube service prometheus-service-name --url` you can get the exposed url
-9. Once we are logged in Grafana *( defult user: admin*, *default password: prom-operator )* we set Prometheus as the data source for our metrics and start to monitor.
+9. Once we are logged in Grafana _( defult user: admin_, _default password: prom-operator )_ we set Prometheus as the data source for our metrics and start to monitor.
 10. Finally, we can create diferent dashboards monitoring several resources
+
+## How the weather API works
+
+The weather info is retrieved from the services of [openweathermap](https://openweathermap.org/).
+
+This API gives us a lot of information about the weather around the world in differents locations. For this project, the API is harcoded to request the weather at Zaragoza city, and we only take the current temperature, but this could be scalated to receive information for any city and take a lot more data like humidity, wind, forecast information, etc in future versions.
