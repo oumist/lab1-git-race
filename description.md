@@ -449,4 +449,4 @@ This two softwares can be deployed with Helm inside a Kubernetes cluster. First 
 
 The weather info is retrieved from the services of [openweathermap](https://openweathermap.org/).
 
-This API gives us a lot of information about the weather around the world in differents locations. For this project, the API is harcoded to request the weather at Zaragoza city, and we only take the current temperature, but this could be scalated to receive information for any city and take a lot more data like humidity, wind, forecast information, etc in future versions.
+This API gives us a lot of information about the weather around the world in different locations. For this project, the API is harcoded to request the weather in Zaragoza city, and we only take the current temperature, but this could be scaled to receive information for any city and take a lot more data such as humidity, wind, forecast information, etc in future versions.
