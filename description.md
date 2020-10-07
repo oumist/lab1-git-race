@@ -447,6 +447,8 @@ This two softwares can be deployed with Helm inside a Kubernetes cluster. First 
 
 ## How the weather API works
 
-The weather info is retrieved from the services of [openweathermap](https://openweathermap.org/).
+The weather info is retrieved from the services of [openweathermap](https://openweathermap.org/) (you can request an API key for free).
 
 This API gives us a lot of information about the weather around the world in different locations. For this project, the API is harcoded to request the weather in Zaragoza city, and we only take the current temperature, but this could be scaled to receive information for any city and take a lot more data such as humidity, wind, forecast information, etc in future versions.
+
+You need to provide a valid API key in the file "application.properties". If you don't provide it, the API won't work and for making the future development of the code easier, the default value is "NO_KEY". This is because if the API key is not valid, it may cause a fatal exception and cause a 500 error code.
