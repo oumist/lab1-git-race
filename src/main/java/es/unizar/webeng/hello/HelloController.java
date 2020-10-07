@@ -1,6 +1,11 @@
 package es.unizar.webeng.hello;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +21,7 @@ import java.text.SimpleDateFormat;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.client.RestTemplate;
 
 
 /**
@@ -35,8 +41,11 @@ public class HelloController {
     @Value("${app.joke_const:Hello World}")
     private String joke_const;
     private String link = "Abre este enlace";
-    private String weather_API = "http://api.openweathermap.org/data/2.5/forecast?id=3104324&appid=3974461a1f67f51495d6c273db02ccaf&lang=es&units=metric";
 
+    @Value("${app.weather_api_key}")
+    private String weather_api_key;
+    private String weather_API = "http://api.openweathermap.org/data/2.5/forecast?id=3104324&appid=";
+    private String weather_options = "&lang=es&units=metric";
     private String luckyColor(){
         
         /* Current day in integer form */
@@ -74,7 +83,7 @@ public class HelloController {
      */
     @GetMapping("/")
     @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
-    public String rollTheDice(Map<String, Object> model) {
+    public String rollTheDice(Map<String, Object> model) throws JsonProcessingException {
 
         /* Current day in integer form */
         Integer num = Integer.parseInt(currentDay);
@@ -123,27 +132,22 @@ public class HelloController {
 
 
         //OpenWeather API
-        try{
+        if(weather_api_key.equals("NO_KEY")) {
+            System.out.println("Give a valid API key for the weather information");
+        } else {
+            weather_API = weather_API + weather_api_key + weather_options;
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> response
+                    = restTemplate.getForEntity(weather_API, String.class);
+            if (response.getStatusCode() == HttpStatus.OK) {
+                ObjectMapper mapper = new ObjectMapper();
+                JsonNode actualObj = mapper.readTree(response.getBody());
 
-            StringBuilder result = new StringBuilder();
-            URL url = new URL(weather_API);
-            URLConnection conn = url.openConnection();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String line;
-            while ((line = rd.readLine()) != null){
-                result.append(line);
+                JsonNode temp = actualObj.path("list").get(1).path("main").path("temp");
+                model.put("temperature", temp.asText());
+            } else {
+                model.put("temperature", "APIDoesNotRespond");
             }
-            rd.close();
-
-            String dataResult = new String(result);
-            String temperature = dataResult.substring(dataResult.indexOf("temp") + 6,
-                    dataResult.indexOf("feels_like") - 2);
-
-            model.put("temperature", temperature);
-
-
-        }catch (IOException e){
-            System.out.println(e.getMessage());
         }
         return "wellcome";
     }
