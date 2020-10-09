@@ -1,19 +1,27 @@
 package es.unizar.webeng.hello;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.*;
 import java.util.Date;
 import java.util.Map;
 import java.util.Random;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.client.RestTemplate;
 
 
 /**
@@ -34,6 +42,10 @@ public class HelloController {
     private String joke_const;
     private String link = "Abre este enlace";
 
+    @Value("${app.weather_api_key}")
+    private String weather_api_key;
+    private String weather_API = "http://api.openweathermap.org/data/2.5/forecast?id=3104324&appid=";
+    private String weather_options = "&lang=es&units=metric";
     private String luckyColor(){
         
         /* Current day in integer form */
@@ -62,14 +74,16 @@ public class HelloController {
      * A controller method which is called when the root endpoint is ordered by a client.
      *
      * It modifies the model, setting into the key "time" the actual date and into the key "message" the
-     * hardcoded value assigned to the attribute "message". Also includes a rolling dice result.
+     * hardcoded value assigned to the attribute "message". Includes a rolling dice result, and the
+     * current weather for Zaragoza in Celsius.
+     *
      *
      * @param model the MVC model
      * @return "wellcome", hardcoded
      */
     @GetMapping("/")
     @ApiOperation(value = "Operacion que muestra la hora actual y dos mensajes por pantalla", response = String.class)
-    public String rollTheDice(Map<String, Object> model) {
+    public String rollTheDice(Map<String, Object> model) throws JsonProcessingException {
 
         /* Current day in integer form */
         Integer num = Integer.parseInt(currentDay);
@@ -115,7 +129,26 @@ public class HelloController {
             model.put("host", "Cannot get the host name");
             model.put("ip", "Cannot get the host address or IP");
         }
-        
+
+
+        //OpenWeather API
+        if(weather_api_key.equals("NO_KEY")) {
+            System.out.println("Give a valid API key for the weather information");
+        } else {
+            weather_API = weather_API + weather_api_key + weather_options;
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> response
+                    = restTemplate.getForEntity(weather_API, String.class);
+            if (response.getStatusCode() == HttpStatus.OK) {
+                ObjectMapper mapper = new ObjectMapper();
+                JsonNode actualObj = mapper.readTree(response.getBody());
+
+                JsonNode temp = actualObj.path("list").get(1).path("main").path("temp");
+                model.put("temperature", temp.asText());
+            } else {
+                model.put("temperature", "APIDoesNotRespond");
+            }
+        }
         return "wellcome";
     }
 
