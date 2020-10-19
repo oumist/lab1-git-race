@@ -149,6 +149,18 @@ public class HelloController {
                 model.put("temperature", "APIDoesNotRespond");
             }
         }
+
+        // Getting coronavirus information
+        coronaAPI corona = new coronaAPI();
+        if (corona.isSuccess()){
+            model.put("corona_total_confirmed", corona.totalConfirmed());
+            model.put("corona_total_deaths", corona.totalDeaths());
+            model.put("corona_total_recovered", corona.totalRecovered());
+        } else {
+            model.put("corona_total_confirmed", "ERROR LOADING INFO");
+            model.put("corona_total_deaths", "ERROR LOADING INFO");
+            model.put("corona_total_recovered", "ERROR LOADING INFO");
+        }
         return "wellcome";
     }
 
