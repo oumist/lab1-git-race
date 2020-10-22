@@ -59,6 +59,7 @@ Simple Spring web application which can perform several actions:
   - [How to use buildPushRun.sh script](#how-to-use-buildpushrunsh-script)
   - [How to monitor with Grafana and Prometheus](#how-to-monitor-with-grafana-and-prometheus)
   - [How the weather API works](#how-the-weather-api-works)
+  - [How Show my home! works](#how-show-my-home!-works)
 
 ## How to build the code
 
@@ -452,3 +453,10 @@ The weather info is retrieved from the services of [openweathermap](https://open
 This API gives us a lot of information about the weather around the world in different locations. For this project, the API is harcoded to request the weather in Zaragoza city, and we only take the current temperature, but this could be scaled to receive information for any city and take a lot more data such as humidity, wind, forecast information, etc in future versions.
 
 You need to provide a valid API key in the file "application.properties". If you don't provide it, the API won't work and for making the future development of the code easier, the default value is "NO_KEY". This is because if the API key is not valid, it may cause a fatal exception and cause a 500 error code.
+
+## How Show my home! works
+Mapping services are provided by [_Openstreetmap_](https://www.openstreetmap.org/). Also, [_Leaflet_](https://leafletjs.com/) is used for adding extra information and functionalities to map such as searching bar and popups. 
+
+Instead of showing your actual home, initially, you will see EINA's location with a popup that says: "Home is where your Wifi connects automatically. Eduroam <3". Created with the aim of being a joke for us, engineers, who spend so much hours in there. After that, you can search whatever location you want to with the searching bar above.
+
+For developping this service, we just have had to add scripts and stylesheet provided by [_Leaflet_](https://leafletjs.com/) and to add showLocation.js file in resources path for customizing the map (initial position, initial zoom, popup and information associated) and the components showed on it (searching bar and its format and its options).
