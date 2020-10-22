@@ -48,10 +48,47 @@ public class RockPaperScizorsController {
      */
     @RequestMapping(value = "/rpsAction", method = RequestMethod.POST, consumes =
             MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public String computerChooseWeapon(@RequestParam("choice") String choice,
+
+    class ValueDTO {
+        public Integer getUserChoice() { return userChoice; }
+        public void setUserChoice(Integer userChoice) { this.userChoice = userChoice; }
+        private Integer userChoice;
+    }
+
+    public String computerChooseWeapon(ValueDTO value,
                                 Map<String, Object> model){
         try {
-            int userChoice = Integer.parseInt(choice); 
+            int userChoice = value.getUserChoice(); 
+            int computerChoice = computerChoice();
+            if (computerChoice == 0){
+                model.put("result", ROCK_RESULT);
+            }
+            else if (computerChoice == 1){
+                model.put("result", PAPER_RESULT);
+            }
+            else if (computerChoice == 2){
+                model.put("result", SCIZORS_RESULT);
+            }
+            if (selectWinner(userChoice, computerChoice)==0){
+                model.put("message", TIE_MESSAGE);
+            }
+            else if (selectWinner(userChoice, computerChoice)==1){
+                model.put("message", WINNING_MESSAGE);
+            }
+            else if (selectWinner(userChoice, computerChoice)==-1){
+                model.put("message", LOSING_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+            model.put("choice", ERROR);
+        }
+        return "rockpaperscizors";
+    }
+
+    public String computerChooseWeaponForTest(@RequestParam("choice") String choice,
+                                Map<String, Object> model){
+        try {
+            int userChoice = Integer.parseInt(choice); // ROCK = 0 , PAPER = 1, SCIZORS = 2
             int computerChoice = computerChoice();
             if (computerChoice == 0){
                 model.put("result", ROCK_RESULT);

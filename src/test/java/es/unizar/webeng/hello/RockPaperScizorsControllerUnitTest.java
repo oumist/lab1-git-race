@@ -66,7 +66,7 @@ public class RockPaperScizorsControllerUnitTest {
     public void computerChooseWeaponROCK() {
         String candidate = "0"; // ROCK = 0 , PAPER = 1, SCIZORS = 2
         HashMap<String, Object> model = new HashMap<>();
-        rpsController.computerChooseWeapon(candidate, model);
+        rpsController.computerChooseWeaponForTest(candidate, model);
         if(model.get("result").equals(ROCK_RESULT)){
             assertEquals(model.get("message"), TIE_MESSAGE);
         }
@@ -82,7 +82,7 @@ public class RockPaperScizorsControllerUnitTest {
     public void computerChooseWeaponPAPER() {
         String candidate = "1"; // ROCK = 0 , PAPER = 1, SCIZORS = 2
         HashMap<String, Object> model = new HashMap<>();
-        rpsController.computerChooseWeapon(candidate, model);
+        rpsController.computerChooseWeaponForTest(candidate, model);
         if(model.get("result").equals(ROCK_RESULT)){
             assertEquals(model.get("message"), WINNING_MESSAGE);
         }
@@ -98,7 +98,7 @@ public class RockPaperScizorsControllerUnitTest {
     public void computerChooseWeaponSCIZORS() {
         String candidate = "2"; // ROCK = 0 , PAPER = 1, SCIZORS = 2
         HashMap<String, Object> model = new HashMap<>();
-        rpsController.computerChooseWeapon(candidate, model);
+        rpsController.computerChooseWeaponForTest(candidate, model);
         if(model.get("result").equals(ROCK_RESULT)){
             assertEquals(model.get("message"), LOSING_MESSAGE);
         }
