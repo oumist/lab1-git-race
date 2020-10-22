@@ -44,7 +44,6 @@ public class RockPaperScizorsController {
         public void setUserChoice(Integer userChoice) { this.userChoice = userChoice; }
         private Integer userChoice;
     }
-    
     /**
      * Method which is called by a POST petition and implements the logic
      * of the game.
