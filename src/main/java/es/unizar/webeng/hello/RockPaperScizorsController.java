@@ -46,7 +46,7 @@ public class RockPaperScizorsController {
      * @param model the Map where the actual result and message are stored
      * @return JSP to the page rockpaperscizors.html
      */
-    @RequestMapping(value = "/rpsAction", method = RequestMethod.POST, consumes =
+    @RequestMapping(value = "/rpsAction", consumes =
             MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 
     class ValueDTO {
