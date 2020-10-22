@@ -98,30 +98,38 @@ public class HelloController {
         }
 
         // random is needed to generate the seed
+        // Random class is part of java.util package and creates a class that will be used later to choose randomly a number 
+        // that will be used to get the variable dice 
         Random random = new Random();
+
 
         // Dice result is calculated between 1 and 6 and storeged in dice
         int dice = random.nextInt(6) + 1;
 
+        // Adding to the interface model the following parameters
         model.put("luckyColor", luckyColor());
         model.put("time", new Date());
         model.put("message", message);
         model.put("joke_const", joke_const);
         // Getting jokes with external api
+        // If joke is success, we do the following implementation to the object model
         GetRequest joke = new GetRequest();
         if (joke.isSuccess()){
             model.put("joke_plus", joke.plus());
             model.put("joke_minus", joke.minus());
         } else {
+            // If the joke does not success, we add an error message to the object model
             model.put("joke_plus", "ERROR LOADING JOKES");
             model.put("joke_minus", "ERROR LOADING JOKES");
         }
         model.put("link", link);
         model.put("extra_message","This is an extra message. Im original enough to not make a new funtionality and just add a new message to the typical HELLO WORLD, come on guys amp it up!");
         model.put("dice", dice);
-        model.put("java", System.getProperty("java.version"));
+        model.put("java", System.getProperty("java.version"));      
 
         try {
+            // The variable ip gets the IP of the router that executes the action, to take the information of the
+            // name and the address of the IP. In case the information is incorrect or is not possible to get the results, an exception will be launched.
             InetAddress ip = InetAddress.getLocalHost();
             model.put("host", ip.getHostName());
             model.put("ip", ip.getHostAddress());
@@ -170,5 +178,6 @@ public class HelloController {
         model.put("message", "Hola " + name);
 
         return "wellcome";
+        //return the string Wellcome
     }
 }
