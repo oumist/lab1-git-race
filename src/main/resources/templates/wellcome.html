@@ -25,6 +25,7 @@
                   <div><a href="textCounter">Text Word Counter (TextCounterController#textCounter(String, Map))</a></div>
                   <div><a href="init-counter">Ultra Counter</a></div>
                   <div><a href="ShowLocation">Show my home!</a></div>
+                  <div><a href="rockPaperScizors_start">Play a Rock, Paper or Scizors game against the CPU!</a></div>
             <hr>
             <h1>Sandbox</h1>
             <h2><th:block th:text="${message + ' &#8594; ' + dice}"></th:block></h2>
@@ -45,5 +46,9 @@
             <p><img src="images/Pilar.jpg"/></p>
             <kbd><a href="/password" style="color: white">Access to the password generator</a></kbd>
             <script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
+            <h1>Coronavirus Information - LIVE</h1>
+            Total confirmados: <th:block th:text="${corona_total_confirmed}"></th:block><br/>
+            Total fallecidos: <th:block th:text="${corona_total_deaths}"></th:block><br/>
+            Total recuperados: <th:block th:text="${corona_total_recovered}"></th:block><br/>
       </body>
 </html>
