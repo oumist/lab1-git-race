@@ -58,4 +58,5 @@ User name | NIA | Travis-CI|Score
 [Elena Morón Vidal](https://github.com/elenamv13/lab1-git-race) | 739324 | [![Build Status](https://travis-ci.com/elenamv13/lab1-git-race.svg)](https://travis-ci.com/elenamv13/lab1-git-race)
 [Daniel Barcelo](https://github.com/DaniBarcelo/lab1-git-race) | 737070 | [![Build Status](https://travis-ci.com/DaniBarcelo/lab1-git-race.svg)](https://travis-ci.com/Danibarcelo/lab1-git-race)
 [Álvaro Santamaría de la Fuente](https://github.com/SanTa45zgz/lab1-git-race) | 756308 | [![Build Status](https://travis-ci.com/SanTa45zgz/lab1-git-race.svg)](https://travis-ci.com/SanTa45zgz/lab1-git-race) | :gift: 
+[Sergio Torres](https://github.com/cul3bro/lab1-git-race) | 738233 | [![Build Status](https://travis-ci.com/cul3bro/lab1-git-race.svg)](https://travis-ci.com/cul3bro/lab1-git-race)
 your name | your nia | your Travis-ci status

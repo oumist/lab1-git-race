@@ -454,6 +454,15 @@ This API gives us a lot of information about the weather around the world in dif
 
 You need to provide a valid API key in the file "application.properties". If you don't provide it, the API won't work and for making the future development of the code easier, the default value is "NO_KEY". This is because if the API key is not valid, it may cause a fatal exception and cause a 500 error code.
 
+## How the coronavirus API works
+
+The API used and its documentation can be found on the website https://documenter.getpostman.com/view/10808728/SzS8rjbc
+
+The GET request https://api.covid19api.com/world/total is used
+where the data is collected in an updated way: infected, deceased and recovered by the pandemic.
+
+Every time the web is loaded from the root "/" address the data is loaded from the API.
+
 ## How Show my home! works
 Mapping services are provided by [_Openstreetmap_](https://www.openstreetmap.org/). Also, [_Leaflet_](https://leafletjs.com/) is used for adding extra information and functionalities to map such as searching bar and popups. 
 
