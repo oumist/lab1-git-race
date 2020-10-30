@@ -45,6 +45,7 @@ public class FlipCoinGuessControllerTest {
         assertThat(view, is("flipCoinGuess"));
         assertTrue(model.containsKey("result"));
         assertTrue(model.containsKey("message"));
+        assertThat(model.get("result"), is(DEFAULT_RESULT));
         assertThat(model.get("message"), is(DEFAULT_MESSAGE));
     }
     /**
