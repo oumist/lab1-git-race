@@ -1,4 +1,7 @@
-package es.unizar.webeng.hello;
+//package es.unizar.webeng.hello; 
+
+
+
 
 /**
  * oddOrEvenController class implements the functionality of get a number, choose randomly an other number and see if the sum
@@ -7,9 +10,10 @@ package es.unizar.webeng.hello;
  * @author Alejandro Omist (737791)
  * @version 1.0
  * @since 21/10/2020
+ * this does not work
  */
 
-import org.springframework.http.MediaType;
+/*import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,4 +44,4 @@ public class oddOrEvenController {
 	}
 
 
-}
+}*/
