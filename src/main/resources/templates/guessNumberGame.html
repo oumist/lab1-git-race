@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gess number game</title>
+    <h1>Guess the random number!</h1>
+</head>
+
+<body>
+    <p th:text="${saludo}"></p>
+    <br/>
+    <label>Attemps:</label>
+    <p th:text="${counter}"></p>
+
+    <form action="/guessAction" method="post">
+        <!-- Al enviar se pasa el parametro a spring como name="nombreParametro"-->
+
+        <!-- Revisar input -->
+        <label>Insert the number</label>
+        <input type='text' id='userNumber' name='userNumber' />
+        <button type="submit">Did i guess?</button>
+    </form>
+
+    <h2 th:text="${message}"></h2>
+
+
+
+</body>
+
+</html>
